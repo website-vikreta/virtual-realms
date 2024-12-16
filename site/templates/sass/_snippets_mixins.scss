@@ -1,0 +1,109 @@
+@use 'global' as *;
+
+/* #region //* SECTION: Regions */
+
+	//* NEW SECTION */
+	/* #region //**** SECTION: PLACEHOLDER ****/
+
+		/* #region //* ANCHOR: Vars */
+
+
+		/* #endregion */
+		/* #region //* ANCHOR: Mixins */
+
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: MOB */
+
+
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: TAB */
+
+		@media (min-width: $query_TAB) {
+
+
+		}
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: SM */
+
+		@media (min-width: $query_SM) {
+
+
+		}
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: MD */
+
+		@media (min-width: $query_MD) {
+
+
+
+		}
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: LG */
+
+		@media (min-width: $query_LG) {
+
+
+
+		}
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: XL */
+
+		@media (min-width: $query_XL) {
+
+
+
+		}
+
+		/* #endregion */
+		/* #region //* ANCHOR: Styles: XXL */
+
+		@media (min-width: $query_XXL) {
+
+
+
+		}
+
+		/* #endregion */
+
+	/* #endregion /* !SECTION */
+
+/* #endregion /* !SECTION */
+
+/* SCSS Conditional */
+@if $breakpointsTab == 0 { display: none; }
+
+/* #region //**** SECTION: MIXINS ****/
+
+	/* #region //* ANCHOR: Margin & Padding */
+
+	/* Margin Padding */
+	@mixin mp($mt: 0, $mr: auto, $mb: 0, $ml: auto, $pt: 0, $pr: 0, $pb: 0, $pl: 0) {}
+
+	/* Padding Margin (Short) */
+	@mixin mpShort($mtb: 0, $mrl: auto, $ptb: 0, $prl: 0) {}
+
+	/* #endregion */
+
+	/* #region //* ANCHOR: Width & Height*/
+
+	/* Width - Height */
+	@mixin wh($w: 100%, $h: 100%) {}
+
+	/* Width - Max-Width */
+	@mixin maxWw($mw: 100%, $w: 100%) {}
+
+	/* Width - Min & Max-Width */
+	@mixin maxWw($minW: 100%, $maxW: 100%, $w: 100%) {}
+
+	
+
+	/* #endregion */
+
+/* #endregion */
+
