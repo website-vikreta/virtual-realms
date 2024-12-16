@@ -49,7 +49,7 @@
 
 ?>
 
-	<section class="<?= $classTag ?>Section mainSection<?= $cardSec ?>">
+	<section id="home-<?= $classTag ?>" class="<?= $classTag ?>Section mainSection<?= $cardSec ?>">
 
 		<div class="bgImg">
 			<?php if ($section->bg != NULL): ?>

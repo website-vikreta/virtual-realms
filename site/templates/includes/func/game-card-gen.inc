@@ -1,8 +1,20 @@
 
-
+<?php 
+$game_slider_enabled = 0;
+if( isset($section->game_slider_enabled) && $section->game_slider_enabled == 1 ){
+	$game_slider_enabled = 1;
+}
+?>
 <div class="cardWrapper">
+	<?php 
+	if( $game_slider_enabled == 1  ) {
+		?>
+		<div class="swiper game-card-slider" data-slide-desktop="<?= $section->desktop_slide; ?>" data-slide-tablet="<?= $section->tablet_slide; ?>" data-slide-mobile="<?= $section->mobile_slide; ?>">
+		<?php
+	}
+	?>	
 
-	<div class="cards">
+	<div class="cards <?php echo ($game_slider_enabled == 1) ? ' swiper-wrapper' : ''; ?>">
 
 		<?php
 
@@ -19,15 +31,16 @@
 			$gameName_cc = $sanitizer->camelCase($gameName);
 			$age = $card->game_age;
 			$minPlayers = $card->game_min_players;
+			$release_date = $card->release_date;
 			$maxPlayers = $card->game_max_players;
 			$orToggle = $card->game_or_toggle;
 			$freeRoam = $card->game_free_roam;
 			$gameLength = $card->game_duration;
-
+			$game_trailer_video = $card->game_trailer_video;			
 			switch ($pageTitle) {
 				case "VR Library": $cover = $card->card_cover; break;
 				default: $cover = $card->ubi_cover == null ? $card->card_cover : $card->ubi_cover; break;
-			}
+			}			
 
 			/* Sets the max number of players to the number of HMDs if the max number of players is greater than the number of HMDs. */
 			$maxPlayers = $maxPlayers > $hmdCount ? $hmdCount : $maxPlayers;
@@ -140,9 +153,19 @@
 				} { $coverTag = ''; }
 			endforeach;
 
+			if( !empty( $release_date )  ){				
+				if( strtotime($release_date) >= strtotime("-6 month") ){
+					$coverTag = '<span class="coverTag newTag">New</span>'; 
+				}
+			}	
+			$swiper_item_class = '';
+			if ($game_slider_enabled == 1) {
+				$swiper_item_class = 'swiper-slide '; 
+			}
+
 		?>
 
-		<section class="gameCard card card<?= $count ?> <?= $gameTagsHyphen ?> ">
+		<section class="<?= $swiper_item_class ?> gameCard card card<?= $count ?> <?= $gameTagsHyphen ?> ">
 
 			<div class="cardCover">
 				<picture class="cardThumb">
@@ -192,7 +215,13 @@
 					<button href="#<?= $gameName_cc; ?>Modal" class="modalBtn btn" type="button" >
 						Details
 					</button>
-					<button class="trailerBtn btn" type="button">Trailer</button>
+					<?php 
+					if( isset($game_trailer_video->url) && !empty($game_trailer_video->url) ){
+						?>
+						<button class="trailerBtn btn" data-href="<?= $game_trailer_video->url ?>" type="button">Trailer</button>
+						<?php
+					}
+					?>					
 				</div>
 			</section>
 
@@ -205,5 +234,13 @@
 		?>
 
 	</div>
+
+	<?php 
+	if( $game_slider_enabled == 1  ) {
+		?>
+		</div>
+		<?php
+	}
+	?>	
 
 </div>

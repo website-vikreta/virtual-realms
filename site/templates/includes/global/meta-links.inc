@@ -17,4 +17,5 @@
 <!-- //* Phosphor Icons */ -->
 <link rel="stylesheet" href="<?=$imagesPath?>/icons/phosphor/src/duotone/style.css">
 
+<link rel="stylesheet" type="text/css" href="<?=$cssPath?>swiper-bundle.min.css" />
 <link rel="stylesheet" type="text/css" href="<?=$cssPath?>global.css" />
