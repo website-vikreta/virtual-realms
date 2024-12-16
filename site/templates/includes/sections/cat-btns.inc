@@ -1,7 +1,7 @@
 
 
 <div class="catWrapper">
-
+	<div class="vr-loader-wrap"><div class="vr-loader"></div></div>
 	<div class="catBtns">
 
 		<?php
@@ -13,7 +13,6 @@
 		foreach ($catTags as $tag):
 
 			$count++;
-
 			$tagName = $tag->title;
 			$tagNameHyph = $sanitizer->hyphenCase($tagName);
 			$tagNameCc = $sanitizer->camelCase($tagName);
@@ -23,7 +22,7 @@
 
 		?>
 
-			<a href='#<?= $tagNameHyph ?>'>
+			<a href='?active_game_tag=<?= $tag->id ?>' data-href='#<?= $tagNameHyph ?>'>
 				<button class='btn catBtn <?= $tagNameCc ?>'>
 					<span class='icon'>
 						<i class='ph-duotone ph-<?= $icon ?>'></i>

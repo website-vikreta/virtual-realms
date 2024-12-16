@@ -4,12 +4,15 @@
 	$cardFilters = $section->card_filters;
 	$cardFiltersNeg = $section->card_filters_neg;
 
+	if( isset($_GET['active_game_tag']) && $_GET['active_game_tag'] ){
+		$cardFilters = $_GET['active_game_tag'];
+	}
+
 	if ($cardFilters == "") {
 		$cardFilter = $cardFiltersNeg == "" ? $cardFilter = '' : $cardFilter = 'game_tags!=' . $cardFiltersNeg;
 	} else {
 		$cardFilter = $cardFiltersNeg == "" ? $cardFilter = 'game_tags=' . $cardFilters : $cardFilter = 'game_tags!=' . $cardFiltersNeg . ',' . 'game_tags=' . $cardFilters;
 	}
-
 	// Sets $ubi variable to true for Ubisoft cards
 	$ubi = $headingHyph == "ubisoft" ? true : false;
 

@@ -1,8 +1,8 @@
 
 
 <div class="cardWrapper">
-
-	<div class="cards">
+	<div class="swiper event-card-slider">
+	<div class="cards swiper-wrapper">
 
 		<?php
 
@@ -37,7 +37,7 @@
 
 		?>
 
-		<section class="card eventCard eventCard<?= $count ?>">
+		<section class="swiper-slide card eventCard eventCard<?= $count ?>">
 
 			<div class="cardCover">
 				<picture class="cardThumb">
@@ -70,5 +70,5 @@
 		?>
 
 	</div>
-
+	</div>
 </div>
