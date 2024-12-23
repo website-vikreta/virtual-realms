@@ -18,30 +18,30 @@
 	<picture>
 		<source type="image/webp"
 			media="(max-width: <?= $mQueryTab ?>)"
-			srcset="<?= $hero_md->webp->url ?>"
+			data-srcset="<?= $hero_md->webp->url ?>"
 		/>
 		<source type="image/webp"
 			media="(max-width: <?= $mQueryMd ?>)"
-			srcset="<?= $hero_sm->webp->url ?>"
+			data-srcset="<?= $hero_sm->webp->url ?>"
 		/>
 		<source type="image/webp"
 			media="(max-width: 10000px)"
-			srcset="<?= $hero_md->webp->url ?>"
+			data-srcset="<?= $hero_md->webp->url ?>"
 		/>
 		<source type="image/jpg"
 			media="(max-width: <?= $mQueryTab ?>)"
-			srcset="<?= $hero_md->url ?>"
+			data-srcset="<?= $hero_md->url ?>"
 		/>
 		<source type="image/jpg"
 			media="(max-width: <?= $mQueryMd ?>)"
-			srcset="<?= $hero_sm->url ?>"
+			data-srcset="<?= $hero_sm->url ?>"
 		/>
 		<source type="image/jpg"
 			media="(max-width: 10000px)"
-			srcset="<?= $hero_md->url ?>"
+			data-srcset="<?= $hero_md->url ?>"
 		/>
 		<img
-			src="<?= $hero_md->url ?>"
+			data-src="<?= $hero_md->url ?>"
 			alt="<?= $page->alt_tag ?>"
 		/>
 	</picture>
@@ -51,11 +51,11 @@
 	<h1> <?= $pageTitle ?> </h1>
 
 	<div class="heroText mob">
-		<img src="<?= $heroPath ?><?= $pageNameHyph ?>/<?= $pageNameHyph ?>-hero-heading-m.svg" alt='<?= $pageTitle ?> heading text graphic (mobile).' />
+		<img data-src="<?= $heroPath ?><?= $pageNameHyph ?>/<?= $pageNameHyph ?>-hero-heading-m.svg" alt='<?= $pageTitle ?> heading text graphic (mobile).' />
 	</div>
 
 	<div class="heroText dt">
-		<img src="<?= $heroPath ?><?= $pageNameHyph ?>/<?= $pageNameHyph ?>-hero-heading.svg" alt='<?= $pageTitle ?> heading text graphic (desktop).' />
+		<img data-src="<?= $heroPath ?><?= $pageNameHyph ?>/<?= $pageNameHyph ?>-hero-heading.svg" alt='<?= $pageTitle ?> heading text graphic (desktop).' />
 	</div>
 
 </div>

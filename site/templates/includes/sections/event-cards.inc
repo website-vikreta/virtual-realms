@@ -42,7 +42,7 @@
 			<div class="cardCover">
 				<picture class="cardThumb">
 					<?php
-						echo '<source type="image/webp" srcset="' . $cardCover->webp->url . '" />';
+						echo '<source type="image/webp" data-srcset="' . $cardCover->webp->url . '" />';
 						echo '<img data-type="jpg" data-src="' . $cardCover->url . '" alt="' . $altTag . ' card cover."/>';
 					?>
 				</picture>

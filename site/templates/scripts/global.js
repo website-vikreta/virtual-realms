@@ -35,7 +35,14 @@ for (var i = 0; i < btn.length; i++) {
 for (var i = 0; i < spans.length; i++) {
 	spans[i].onclick = function() {
 		for (var index in modals) {
-			if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+			if (typeof modals[index].style !== 'undefined'){
+				modals[index].style.display = "none";
+				if( document.querySelectorAll('.trailer-responsive video').length > 0 ){
+					document.querySelectorAll('.trailer-responsive video').forEach(function (s_video) {
+						s_video.pause();
+					});
+				}
+			}
 		}
 	}
 }
@@ -44,7 +51,14 @@ for (var i = 0; i < spans.length; i++) {
 window.onclick = function(event) {
 	if (event.target.classList.contains('modal')) {
 		for (var index in modals) {
-			if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+			if (typeof modals[index].style !== 'undefined'){
+				modals[index].style.display = "none";
+				if( document.querySelectorAll('.trailer-responsive video').length > 0 ){
+					document.querySelectorAll('.trailer-responsive video').forEach(function (s_video) {
+						s_video.pause();
+					});
+				}
+			}
 		}
 	}
 }
@@ -163,6 +177,7 @@ document.addEventListener('click', function (event) {
     		var currentCards = document.querySelector('.allGameCardsSection .cards');
     		if (currentCards && newCards) {
     			currentCards.innerHTML = newCards.innerHTML;
+    			load_all_images();
     		}
     	})
     	.catch(function (error) {
@@ -219,21 +234,24 @@ setTimeout(function(){
 		new Swiper(".event-card-slider", {			
 			spaceBetween: 1,
 			breakpoints: {
-				500: {
+				480: {
 					slidesPerView: 1,					
 				},
-				640: {
+				500: {
 					slidesPerView: 2,					
 				},
-				768: {
-					slidesPerView: 3,					
+				991: {
+					slidesPerView: 2,					
 				},
 				1024: {
+					slidesPerView: 2.5,					
+				},
+				1200: {
 					slidesPerView: 3.5,					
 				},
 			}
 		});
-	}
+	} 
 	if( document.querySelectorAll('.game-card-slider').length > 0 ){
 		document.querySelectorAll('.game-card-slider').forEach(function (slider) {
 			var desktopSlide = slider.getAttribute('data-slide-desktop');
@@ -251,11 +269,11 @@ setTimeout(function(){
 			new Swiper(slider, {
 				spaceBetween: 1,
 				breakpoints: {
-					500: {
+					480: {
 						slidesPerView: mobileSlide,
 						
 					},
-					640: {
+					500: {
 						slidesPerView: mobileSlide,
 						
 					},
@@ -298,3 +316,38 @@ function load_faq(){
 }
 
 load_faq(); 
+
+
+function load_all_images(){
+	let observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(function (entry) {
+			if (entry.intersectionRatio > 0 || entry.isIntersecting) {
+				const image = entry.target;
+				observer.unobserve(image);
+
+				if (image.hasAttribute('src')) {
+        // Image has been loaded already
+					return;
+				}
+
+      // Image has not been loaded so load it
+				const sourceUrl = image.getAttribute('data-src');
+				image.setAttribute('src', sourceUrl);
+				image.onload = () => {
+        // Do stuff
+				}
+
+      // Removing the observer
+				observer.unobserve(image);
+			}
+		});
+	});
+
+	document.querySelectorAll('img[data-src]').forEach((el) => {
+		observer.observe(el);
+	});
+}
+
+setTimeout(function() {
+	load_all_images();
+},100);
