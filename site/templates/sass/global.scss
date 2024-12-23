@@ -1,3686 +1,3562 @@
-
-//* Quick Toggles */
-$breakpointsTab: 1;
-$adminBtns: 0;
-
-/* #region //**** ANCHOR: PREFLIGHT ****/
-
+/* #region /
+/**** ANCHOR: PREFLIGHT ****/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
- html {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
-	}
-
-	/* Sections
-		========================================================================== */
-
-	/** Remove the margin in all browsers. */
-
-	body { margin: 0; }
-
-	/** Render the `main` element consistently in IE. */
-
-	main { display: block; }
-
-	/**
-	* Correct the font size and margin on `h1` elements within `section` and
-	* `article` contexts in Chrome, Firefox, and Safari.
-	*/
-
-	h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-	}
-
-	/* Grouping content
-		========================================================================== */
-
-	/**
-	* 1. Add the correct box sizing in Firefox.
-	* 2. Show the overflow in Edge and IE.
-	*/
-
-	hr {
-	box-sizing: content-box; /* 1 */
-	height: 0; /* 1 */
-	overflow: visible; /* 2 */
-	}
-
-	/**
-	* 1. Correct the inheritance and scaling of font size in all browsers.
-	* 2. Correct the odd `em` font sizing in all browsers.
-	*/
-
-	pre {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-	}
-
-	/* Text-level semantics
-		========================================================================== */
-
-	/**
-	* Remove the gray background on active links in IE 10.
-	*/
-
-	a { background-color: transparent; }
-
-	/**
-	* 1. Remove the bottom border in Chrome 57-
-	* 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-	*/
-
-	abbr[title] {
-	border-bottom: none; /* 1 */
-	text-decoration: underline; /* 2 */
-	-webkit-text-decoration: underline dotted;
-			text-decoration: underline dotted; /* 2 */
-	}
-
-	/**
-	* Add the correct font weight in Chrome, Edge, and Safari.
-	*/
-
-	b, strong { font-weight: bolder; }
-
-	/**
-	* 1. Correct the inheritance and scaling of font size in all browsers.
-	* 2. Correct the odd `em` font sizing in all browsers.
-	*/
-
-	code, kbd, samp {
-	font-family: monospace, monospace; /* 1 */
-	font-size: 1em; /* 2 */
-	}
-
-	/**
-	* Add the correct font size in all browsers.
-	*/
-
-	small { font-size: 80%; }
-
-	/**
-	* Prevent `sub` and `sup` elements from affecting the line height in
-	* all browsers.
-	*/
-
-	sub, sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-	}
-
-	sub { bottom: -0.25em; }
-
-	sup { top: -0.5em; }
-
-	/* Embedded content
-		========================================================================== */
-
-	/**
-	* Remove the border on images inside links in IE 10.
-	*/
-
-	img { border-style: none; }
-
-	/* Forms
-		========================================================================== */
-
-	/**
-	* 1. Change the font styles in all browsers.
-	* 2. Remove the margin in Firefox and Safari.
-	*/
-
-	button, input, optgroup, select, textarea {
-	font-family: inherit; /* 1 */
-	font-size: 100%; /* 1 */
-	line-height: 1.15; /* 1 */
-	margin: 0; /* 2 */
-	}
-
-	/**
-	* Show the overflow in IE.
-	* 1. Show the overflow in Edge.
-	*/
-
-	button, input { /* 1 */
-	overflow: visible;
-	}
-
-	/**
-	* Remove the inheritance of text transform in Edge, Firefox, and IE.
-	* 1. Remove the inheritance of text transform in Firefox.
-	*/
-
-	button,
-	select { /* 1 */
-	text-transform: none;
-	}
-
-	/**
-	* Correct the inability to style clickable types in iOS and Safari.
-	*/
-
-	button,
-	[type="button"],
-	[type="reset"],
-	[type="submit"] {
-	appearance: button;
-	-webkit-appearance: button;
-	}
-
-	/**
-	* Remove the inner border and padding in Firefox.
-	*/
-
-	button::-moz-focus-inner,
-	[type="button"]::-moz-focus-inner,
-	[type="reset"]::-moz-focus-inner,
-	[type="submit"]::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-	}
-
-	/**
-	* Restore the focus styles unset by the previous rule.
-	*/
-
-	button:-moz-focusring,
-	[type="button"]:-moz-focusring,
-	[type="reset"]:-moz-focusring,
-	[type="submit"]:-moz-focusring {
-	outline: 1px dotted ButtonText;
-	}
-
-	/**
-	* Correct the padding in Firefox.
-	*/
-
-	fieldset { padding: 0.35em 0.75em 0.625em; }
-
-	/**
-	* 1. Correct the text wrapping in Edge and IE.
-	* 2. Correct the color inheritance from `fieldset` elements in IE.
-	* 3. Remove the padding so developers are not caught out when they zero out
-	*    `fieldset` elements in all browsers.
-	*/
-
-	legend {
-	box-sizing: border-box; /* 1 */
-	color: inherit; /* 2 */
-	display: table; /* 1 */
-	max-width: 100%; /* 1 */
-	padding: 0; /* 3 */
-	white-space: normal; /* 1 */
-	}
-
-	/**
-	* Add the correct vertical alignment in Chrome, Firefox, and Opera.
-	*/
-
-	progress { vertical-align: baseline; }
-
-	/**
-	* Remove the default vertical scrollbar in IE 10+.
-	*/
-
-	textarea { overflow: auto; }
-
-	/**
-	* 1. Add the correct box sizing in IE 10.
-	* 2. Remove the padding in IE 10.
-	*/
-
-	[type="checkbox"],
-	[type="radio"] {
-	box-sizing: border-box; /* 1 */
-	padding: 0; /* 2 */
-	}
-
-	/**
-	* Correct the cursor style of increment and decrement buttons in Chrome.
-	*/
-
-	[type="number"]::-webkit-inner-spin-button,
-	[type="number"]::-webkit-outer-spin-button {
-	height: auto;
-	}
-
-	/**
-	* 1. Correct the odd appearance in Chrome and Safari.
-	* 2. Correct the outline style in Safari.
-	*/
-
-	[type="search"] {
-	appearance: textfield;
-	-webkit-appearance: textfield; /* 1 */
-	outline-offset: -2px; /* 2 */
-	}
-
-	/**
-	* Remove the inner padding in Chrome and Safari on macOS.
-	*/
-
-	[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
-	}
-
-	/**
-	* 1. Correct the inability to style clickable types in iOS and Safari.
-	* 2. Change font properties to `inherit` in Safari.
-	*/
-
-	::-webkit-file-upload-button {
-	-webkit-appearance: button; /* 1 */
-	font: inherit; /* 2 */
-	}
-
-	/* Interactive
-		========================================================================== */
-
-	/*
-	* Add the correct display in Edge, IE 10+, and Firefox.
-	*/
-
-	details { display: block; }
-
-	/*
-	* Add the correct display in all browsers.
-	*/
-
-	summary { display: list-item; }
-
-	/* Misc
-		========================================================================== */
-
-	/**
-	* Add the correct display in IE 10+.
-	*/
-
-	template { display: none; }
-
-	/**
-	* Add the correct display in IE 10.
-	*/
-
-	[hidden] { display: none; }
-
-	/**
-	* Manually forked from SUIT CSS Base: https://github.com/suitcss/base
-	* A thin layer on top of normalize.css that provides a starting point more
-	* suitable for web applications.
-	*/
-
-	/**
-	* Removes the default spacing and border for appropriate elements.
-	*/
-
-	blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }
-
-	button {
-	background-color: transparent;
-	background-image: none;
-	}
-
-	/**
-	* Work around a Firefox/IE bug where the transparent `button` background
-	* results in a loss of the default `button` focus styles.
-	*/
-
-	button:focus {
-	outline: 1px dotted;
-	outline: 5px auto -webkit-focus-ring-color;
-	}
-
-	fieldset {
-	margin: 0;
-	padding: 0;
-	}
-
-	ol,
-	ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	}
-
-	/**
-	* Tailwind custom reset styles
-	*/
-
-	/**
-	* 1. Use the user's configured `sans` font-family (with Tailwind's default
-	*    sans-serif font stack as a fallback) as a sane default.
-	* 2. Use Tailwind's default "normal" line-height so the user isn't forced
-	*    to override it to ensure consistency even when using the default theme.
-	*/
-
-	html {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
-	line-height: 1.5; /* 2 */
-	}
-
-	/**
-	* 1. Prevent padding and border from affecting element width.
-	*
-	*    We used to set this in the html element and inherit from
-	*    the parent element for everything else. This caused issues
-	*    in shadow-dom-enhanced elements like <details> where the content
-	*    is wrapped by a div with box-sizing set to `content-box`.
-	*
-	*    https://github.com/mozdevs/cssremedy/issues/4
-	*
-	*
-	* 2. Allow adding a border to an element by just adding a border-width.
-	*
-	*    By default, the way the browser specifies that an element should have no
-	*    border is by setting it's border-style to `none` in the user-agent
-	*    stylesheet.
-	*
-	*    In order to easily add borders to elements by just setting the `border-width`
-	*    property, we change the default border-style for all elements to `solid`, and
-	*    use border-width to hide them instead. This way our `border` utilities only
-	*    need to set the `border-width` property instead of the entire `border`
-	*    shorthand, making our border utilities much more straightforward to compose.
-	*
-	*    https://github.com/tailwindcss/tailwindcss/pull/116
-	*/
-
-	*,
-	::before,
-	::after {
-	box-sizing: border-box; /* 1 */
-	border-width: 0; /* 2 */
-	border-style: solid; /* 2 */
-	border-color: #e2e8f0; /* 2 */
-	}
-
-	/*
-	* Ensure horizontal rules are visible by default
-	*/
-
-	hr { border-top-width: 1px; }
-
-	/**
-	* Undo the `border-style: none` reset that Normalize applies to images so that
-	* our `border-{width}` utilities have the expected effect.
-	*
-	* The Normalize reset is unnecessary for us since we default the border-width
-	* to 0 on all elements.
-	*
-	* https://github.com/tailwindcss/tailwindcss/issues/362
-	*/
-
-	img {
-	border-style: solid;
-	}
-
-	textarea {
-	resize: vertical;
-	}
-
-	input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-	color: #a0aec0;
-	}
-
-	input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-	color: #a0aec0;
-	}
-
-	input::placeholder,
-	textarea::placeholder {
-	color: #a0aec0;
-	}
-
-	button,
-	[role="button"] {
-	cursor: pointer;
-	}
-
-	table {
-	border-collapse: collapse;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-	font-size: inherit;
-	font-weight: inherit;
-	}
-
-	/**
-	* Reset links to optimize for opt-in styling instead of
-	* opt-out.
-	*/
-
-	a {
-	color: inherit;
-	text-decoration: inherit;
-	}
-
-	/**
-	* Reset form element properties that are easy to forget to
-	* style explicitly so you don't inadvertently introduce
-	* styles that deviate from your design system. These styles
-	* supplement a partial reset that is already applied by
-	* normalize.css.
-	*/
-
-	button,
-	input,
-	optgroup,
-	select,
-	textarea {
-	padding: 0;
-	line-height: inherit;
-	color: inherit;
-	}
-
-	/**
-	* Use the configured 'mono' font family for elements that
-	* are expected to be rendered with a monospace font, falling
-	* back to the system monospace stack if there is no configured
-	* 'mono' font family.
-	*/
-
-	pre,
-	code,
-	kbd,
-	samp {
-	font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	}
-
-	/**
-	* Make replaced elements `display: block` by default as that's
-	* the behavior you want almost all of the time. Inspired by
-	* CSS Remedy, with `svg` added as well.
-	*
-	* https://github.com/mozdevs/cssremedy/issues/14
-	*/
-
-	img,
-	svg,
-	video,
-	canvas,
-	audio,
-	iframe,
-	embed,
-	object {
-	display: block;
-	vertical-align: middle;
-	}
-
-	/**
-	* Constrain images and videos to the parent width and preserve
-	* their instrinsic aspect ratio.
-	*
-	* https://github.com/mozdevs/cssremedy/issues/14
-	*/
-
-	img,
-	video {
-	max-width: 100%;
-	height: auto;
-	}
-
-/* #endregion */
-
-/* #region //**** SECTION: FROST DS ****/
-
-	/* #region //* ANCHOR: Media Queries */
-
-	$query_TAB: 640px;
-	$query_SM : 768px;
-	$query_MD : 1024px;
-	$query_LG : 1367px;
-	$query_XL : 1600px;
-	$query_XXL: 1800px;
-
-/* #endregion */
-	/* #region //* SECTION: Colors */
-
-		/* #region //* ANCHOR: System */
-
-			//* Solid */
-			$grey05: #F2F2F2; $grey10: #E6E6E6;
-			$grey15: #D9D9D9; $grey20: #CCCCCC;
-			$grey30: #B3B3B3; $grey40: #999999;
-			$grey50: #808080; $grey60: #676767;
-			$grey70: #4D4D4D; $grey80: #333333;
-			$grey85: #272727; $grey90: #1A1A1A;
-			$grey95: #0D0D0D;
-
-			$invisible: rgba(0,0,0,0);
-
-			//* Transparent (Black) */
-			$black05: rgba(0, 0, 0, .05);	$black10: rgba(0, 0, 0, .10);
-			$black15: rgba(0, 0, 0, .15);	$black20: rgba(0, 0, 0, .20);
-			$black30: rgba(0, 0, 0, .30);	$black40: rgba(0, 0, 0, .40);
-			$black50: rgba(0, 0, 0, .50);	$black60: rgba(0, 0, 0, .60);
-			$black70: rgba(0, 0, 0, .70);	$black80: rgba(0, 0, 0, .80);
-			$black85: rgba(0, 0, 0, .85);	$black90: rgba(0, 0, 0, .90);
-			$black95: rgba(0, 0, 0, .95);
-
-			//* Transparent (White) */
-			$white05: rgba(255, 255, 255, .05);
-			$white10: rgba(255, 255, 255, .10);
-			$white15: rgba(255, 255, 255, .15);
-			$white20: rgba(255, 255, 255, .20);
-			$white25: rgba(255, 255, 255, .25);
-			$white30: rgba(255, 255, 255, .30);
-			$white35: rgba(255, 255, 255, .35);
-			$white40: rgba(255, 255, 255, .40);
-			$white45: rgba(255, 255, 255, .45);
-			$white50: rgba(255, 255, 255, .50);
-			$white55: rgba(255, 255, 255, .55);
-			$white60: rgba(255, 255, 255, .60);
-			$white65: rgba(255, 255, 255, .65);
-			$white70: rgba(255, 255, 255, .70);
-			$white75: rgba(255, 255, 255, .75);
-			$white80: rgba(255, 255, 255, .80);
-			$white85: rgba(255, 255, 255, .85);
-			$white90: rgba(255, 255, 255, .90);
-			$white95: rgba(255, 255, 255, .95);
-
-		/* #endregion */
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Typography */
-
-		/* #region //* ANCHOR: Fonts */
-
-		/* #endregion */
-		/* #region //* ANCHOR: Font Stacks */
-
-			// System stacks //
-			//*** Serif Font Stack 1 (System) ***/
-			$sans1: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-			segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-
-			//* Sans Stack 1 (System) */
-			$serif1: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-
-		/* #endregion */
-
-		$mono1: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-
-	/* #endregion /* !SECTION */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: COLORS ****/
-
-	/* #region //* SECTION: Brand */
-
-	$orange: rgb(252, 157, 143);  // #FC9D8F
-	$pink  : rgb(221, 133, 228);  // #DD85E4
-	$lilac : rgb(141, 120, 255);  // #8D78FF
-	$blue  : rgb(87, 123, 252);   // #577BFC
-	$aqua  : rgb(106,197,243);    // #6ac5f3
-	$green : rgb(128, 252, 176);  // #80fcb0
-
-		/* #region //* ANCHOR: Transparent */
-
-		$lilac15: rgba(141,120,255, .15);
-		$lilac35: rgba(141,120,255, .35);
-		$lilac50: rgba(141,120,255, .50);
-		$lilac90: rgba(141,120,255, .90);
-
-		$pink05: rgba(221, 133, 228, .05);
-		$pink15: rgba(221, 133, 228, .15);
-		$pink35: rgba(221, 133, 228, .35);
-		$pink50: rgba(221, 133, 228, .50);
-		$pink90: rgba(221, 133, 228, .90);
-
-		$aqua05: rgba(106,197,243, .05);
-		$aqua15: rgba(106,197,243, .15);
-		$aqua35: rgba(106,197,243, .30);
-		$aqua50: rgba(106,197,243, .50);
-		$aqua90: rgba(106,197,243, .90);
-
-		$blue05: rgba(87,123,252, .05);
-		$blue15: rgba(87,123,252, .15);
-		$blue35: rgba(87,123,252, .35);
-		$blue50: rgba(87,123,252, .50);
-		$blue90: rgba(87,123,252, .90);
-
-		$green05: rgba(128,252,176, .05);
-		$green15: rgba(128,252,176, .15);
-		$green35: rgba(128,252,176, .30);
-		$green50: rgba(128,252,176, .50);
-		$green90: rgba(128,252,176, .90);
-
-		$orange05: rgba(252,157,143, .05);
-		$orange15: rgba(252,157,143, .15);
-		$orange35: rgba(252,157,143, .35);
-		$orange50: rgba(252,157,143, .50);
-		$orange90: rgba(252,157,143, .90);
-
-		/* #endregion */
-		/* #region //* ANCHOR: Gradients */
-
-		$multiGradV: linear-gradient(180deg, $orange 0%, $pink 20%, $lilac 40%, $blue 60%, $aqua 80%, $green 100%);
-
-		$multiGradH: linear-gradient(90deg, $orange 0%, $pink 20%, $lilac 40%, $blue 60%, $aqua 80%, $green 100%);
-
-		//* Aqua-Lilac Gradient */
-		$alGradV: linear-gradient(0deg, $lilac 14.85%, $aqua 100.8%);
-		$alGradH: linear-gradient(90deg, $lilac 14.85%, $aqua 100.8%);
-
-		$alaGradV: linear-gradient(0deg, $aqua 0%, $lilac 33%, $lilac 66%, $aqua 100%);
-		$papGradV: linear-gradient(0deg, $lilac 0%, $aqua 33%, $aqua 66%, $lilac 100%);
-
-		//* Orange-Lilac Gradient */
-		$opGradV: linear-gradient(0deg, $lilac 14.85%, $orange 100.8%);
-		$opGradH: linear-gradient(90deg, $lilac 14.85%, $orange 100.8%);
-
-		//* Green-Lilac Gradient */
-		$glGradV: linear-gradient(0deg, $lilac 14.85%, $green 100.8%);
-		$glGradH: linear-gradient(90deg, $lilac 14.85%, $green 100.8%);
-
-		//* Aqua-Pink Gradient */
-		$piaGradV: linear-gradient(0deg, $pink 14.85%, $aqua 100.8%);
-		$piaGradH: linear-gradient(90deg, $pink 14.85%, $aqua 100.8%);
-
-		$apiGradV: linear-gradient(0deg, $aqua 14.85%, $pink 100.8%);
-		$apiGradH: linear-gradient(90deg, $aqua 14.85%, $pink 100.8%);
-
-		//* Lilac-Pink Gradient */
-		$pilGradV: linear-gradient(0deg, $pink 14.85%, $lilac 100.8%);
-		$pilGradH: linear-gradient(90deg, $pink 14.85%, $lilac 100.8%);
-
-		$lpiGradV: linear-gradient(0deg, $lilac 14.85%, $pink 100.8%);
-		$lpiGradH: linear-gradient(90deg, $lilac 14.85%, $pink 100.8%);
-
-		//* Card HR */
-		$aquaHrGrad: linear-gradient(90deg, $invisible 9.53%,
-		rgba(106, 197, 243, 0.90) 50%, $invisible 89.53%);
-
-		$lilacHrGrad: linear-gradient(90deg, rgba(141, 120, 255, 0) 9.53%, $lilac90 50%, rgba(141, 120, 255, 0) 89.53%);
-
-		$orangeHrGrad: linear-gradient(90deg, $invisible 9.53%,
-		$orange90 50%, $invisible 89.53%);
-
-		$greenHrGrad: linear-gradient(90deg, $invisible 9.53%,
-		$green90 50%, $invisible 89.53%);
-
-		/* #endregion */
-
-	/* #endregion /* !SECTION */
-	/* #region //* ANCHOR: Ubisoft */
-
-	$ubiTxt: #B1A378;
-	$ubiBg: #181512;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Tokens */
-
-		$black: black;
-		$white: white;
-
-		$text: #f1f1f1;
-		$link: $aqua;
-		$link_h: $orange;
-		$bodyBg: black;
-
-		$headingColor: $aqua;
-		$leadColor: white;
-		$mainBg: black;
-
-		$navBg: black;
-		$navBg_m: black;
-		$navLink: $alGradV;
-		$navLink_h: $orange;
-		$navSocialIcon: $alGradV;
-		$navSocialIcon_h: $orange;
-		$menuToggle: $alGradV;
-		$menuToggle_h: $orange;
-		$borderGrad: $alGradV;
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: TYPOGRAPHY ****/
-
-	/* #region //* ANCHOR: Fonts */
-
-		/* #region //* Ethnocentric */
-
-			/* Regular */
-			@font-face {
-				font-family: 'Ethnocentric';
-				src: url('../fonts/ethnocentric/ethnocentric rg.otf');
-				font-weight: normal;
-				font-style: normal;
-			}
-
-			/* Italic */
-			@font-face {
-				font-family: 'Ethnocentric';
-				src: url('../fonts/ethnocentric/ethnocentric rg it.otf');
-				font-weight: normal;
-				font-style: italic;
-			}
-
-		/* #endregion */
-
-		/* #region //* Veteran */
-
-			/* Regular */
-			@font-face {
-				font-family: 'Veteran';
-				src: url('../fonts/veteran/veteran.ttf');
-				font-weight: normal;
-				font-style: normal;
-			}
-
-		/* #endregion */
-
-	/* #endregion */
-
-	/* #region //* ANCHOR: Stacks */
-
-		//* Ethnocentric */
-		$ethno: "Ethnocentric", $sans1;
-
-		//* Veteran */
-		$veteran: "Veteran", $sans1;
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: VARIABLES ****/
-
-	$smPad: 24px;
-
-	$mainPad_m: 4%;
-	$mainPad_sm: 20px;
-	$mainPad_lg: 24px;
-	$mainPad_xl: 28px;
-
-	$glassBlur1: 8px;
-	$glassBlur2: 15px;
-	$mainScroll: $aqua;
-	$mainScrollBg: $black;
-
-	/* #region //* ANCHOR: Media Queries */
-
-	$query_TAB: 640px;
-	$query_SM : 768px;
-	$query_MD : 1024px;
-	$query_LG : 1360px;
-	$query_XL : 1600px;
-	$query_XXL : 1900px;
-
-	/* #endregion */
-	/* #region //* ANCHOR: NavMenu */
-
-	$toggleIconSz: 42px;
-	$togglePad: 20px;
-
-	$globalAnim: 0.7s;
-
-	$navWidth_m : 60px;			$navActive_m : 40.7rem;
-	$navWidth_sm: 54px;			$navActive_sm: 33.8rem;
-	$navWidth_xl: 60px;			$navActive_xl: 41.2rem;
-
-	$navLinkPadY_m : 0.75vh;	$navLinkTopPad_m : 0.42rem;
-	$navLinkPadY_sm: 0.85vh;	$navLinkTopPad_sm: 0.395rem;
-	$navLinkPadY_xl: null;		$navLinkTopPad_xl: 0.42rem;
-
-	$navLinkSz_m : 1.65rem;		$navIconSz_m : 2.6rem;
-	$navLinkSz_sm: 1.3rem;		$navIconSz_sm: 2.0rem;
-	$navLinkSz_xl: 1.65rem;		$navIconSz_xl: 2.4rem;
-
-	$marginL_m : 1.2rem;		$navSocIconSz_m : 4.4rem;
-	$marginL_sm: 0.4rem;		$navSocIconSz_sm: 3.2rem;
-	$marginL_lg: null;			$navSocIconSz_xl: 3.8rem;
-
-	$navPhoneSz_m : 2.4rem;		$navPhonePad_m : 0.6rem;
-	$navPhoneSz_sm: 1.6rem;		$navPhonePad_sm: 0.4rem;
-	$navPhoneSz_xl: 2.2rem;		$navPhonePad_xl: 0.5rem;
-
-	$navPhoneIconSz_m : 3.2rem;
-	$navPhoneIconSz_sm: 2.0rem;
-	$navPhoneIconSz_xl: 2.8rem;
-
-	$m_navOffset: calc($navWidth_m - $navWidth_m * 2);
-
-	/* #endregion */
-	/* #region //* ANCHOR: Header */
-
-	$lg_headHeight: 19vh;
-	$lg_headOffset: calc($lg_headHeight - $lg_headHeight * 2);
-
-	/* #endregion */
-	/* #region //* ANCHOR: Page */
-
-	$mPage : 100%;
-	$smPage: calc(100vw - $navWidth_sm);
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: MIXINS ****/
-
-	//* Main "A" */
-	@mixin a($m: null, $p: null, $my: null, $mx: null, $py: null, $px: null, $mt: null, $mr: null, $mb: null, $ml: null, $pt: null, $pr: null, $pb: null, $pl: null, $wh: null, $w: null, $min: null, $max: null, $h: null, $minH: null, $maxH: null, $fix: null, $abs: null, $rel: null, $static: null, $t: null, $r: null, $b: null, $l: null, $align: null, $flex: null, $z: null, $hide: null, $bg: null, $blur: null, $display: null, $bgImg: null) {
-		@if ($m) { margin: $m; }
-		@if ($p) { padding: $p; }
-		@if ($mx) {
-			margin-right: $mx;
-			margin-left: $mx;
-		}
-		@if ($my) {
-			margin-top: $my;
-			margin-bottom: $my;
-		}
-		@if ($px) {
-			padding-right: $px;
-			padding-left: $px;
-		}
-		@if ($py) {
-			padding-top: $py;
-			padding-bottom: $py;
-		}
-		@if ($mt) { margin-top: $mt; }
-		@if ($mb) { margin-bottom: $mb; }
-		@if ($mr) { margin-right: $mr; }
-		@if ($ml) { margin-left: $ml; }
-		@if ($pt) { padding-top: $pt; }
-		@if ($pb) { padding-bottom: $pb; }
-		@if ($pr) { padding-right: $pr; }
-		@if ($pl) { padding-left: $pl; }
-		@if ($w) { width: $w; }
-		@if ($min) { min-width: $min; }
-		@if ($max) { max-width: $max; }
-		@if ($h) { height: $h; }
-		@if ($minH) { min-height: $minH; }
-		@if ($maxH) { max-height: $maxH; }
-		@if ($wh) { width: $wh; height: $wh; }
-		@if ($fix) { position: fixed; }
-		@if ($abs) { position: absolute; }
-        @if ($rel) { position: relative; }
-		@if ($static) {position: static; }
-		@if ($t) { top: $t; }
-		@if ($b) { bottom: $b; }
-		@if ($r) { right: $r; }
-		@if ($l) { left: $l; }
-		@if ($align) { text-align: $align; }
-		@if ($flex) { display: flex; }
-		@if ($z) { z-index: $z; }
-		@if ($hide == 1) { display: none; }
-		@if ($display) { display: $display; }
-		@if ($bg) { background-color: $bg; }
-		@if ($bgImg) { background-image: $bgImg; }
-		@if ($blur) { backdrop-filter: blur($blur); }
-	}
-
-	@mixin gradLink($link, $link_h) {
-		a {
-			@include gradText($link);
-			&:hover { @include gradText($link_h); }
-		}
-	}
-
-	/* #region //* ANCHOR: Animation */
-
-	//* Transition */
-	@mixin anim($speed: 1s, $delay: 0s, $ease: ease-in-out) {
-		transition: all $speed $ease $delay;
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Size & Alignment */
-
-	//* Center Vertically */
-	@mixin centerV {
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	/* #endregion */
-
-	/* #region //* SECTION: Text */
-
-		/* #region //* ANCHOR: Main Text */
-
-		@mixin text($sz: null, $color: null, $font: null, $ht: null, $space: null, $wt: null, $style: null, $align: null, $tform: null, $p: null, $pt: null, $pr: null, $pb: null, $pl: null, $m: null, $mt: null, $mr: null, $mb: null, $ml: null) {
-			@if ($font) { font-family: $font; }
-			@if ($sz) { font-size: $sz; }
-			@if ($wt) { font-weight: $wt; }
-			@if ($style) { font-weight: $style; }
-			@if ($ht) { line-height: $ht };
-			@if ($align) { text-align: $align };
-			@if ($tform) { text-transform: $tform };
-			@if ($color) { color: $color };
-			@if ($space) { letter-spacing: $space };
-			@if ($p) { padding: $p };
-			@if ($pt) { padding-top: $pt };
-			@if ($pb) { padding-bottom: $pb };
-			@if ($pl) { padding-left: $pl };
-			@if ($pr) { padding-right: $pr };
-			@if ($m) { margin: $m };
-			@if ($mt) { margin-top: $mt };
-			@if ($mb) { margin-bottom: $mb };
-			@if ($ml) { margin-left: $ml };
-			@if ($mr) { margin-right: $mr };
-		}
-
-		/* #endregion */
-		/* #region //* ANCHOR: Gradient Text */
-
-		@mixin gradText($bg: $alGradV) {
-			background: $bg;
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-
-		/* #endregion */
-
-	/* #endregion /* !SECTION */
-	/* #region //* ANCHOR: Cards */
-
-
-
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: BREAKPOINTS TAB ****/
-
-	/* #region //* ANCHOR: Styles: MOB */
-
-		#breakpoints {
-			@include text(12px, $orange, $ethno, 12px, 0, $p: 8px 12px);
-			@include a($fix: 1, $r: 20px, $b: 0px, $bg: $grey95, $z: 50000);
-			@if ($breakpointsTab == 0) { display: none; }
-			#tab, #sm, #md, #lg, #xl, #xxl { display: none; }
-			#mob { display: block; }
-			border-radius: 6px 6px 0px 0px;
-		}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-		#breakpoints {
-			#mob, #sm, #md, #lg, #xl, #xxl { display: none; }
-			#tab { display: block; }
-			color: $green;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		#breakpoints {
-			#mob, #tab, #md, #lg, #xl, #xxl { display: none; }
-			#sm { display: block; }
-			color: $aqua;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-		#breakpoints {
-			#mob, #tab, #sm, #lg, #xl, #xxl { display: none; }
-			#md { display: block; }
-			color: $lilac;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-		#breakpoints {
-			#mob, #tab, #sm, #md, #xl, #xxl { display: none; }
-			#lg { display: block; }
-			color: $orange;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		#breakpoints {
-			#mob, #tab, #sm, #md, #lg, #xxl { display: none; }
-			#xl { display: block; }
-			color: $green;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-		#breakpoints {
-			#mob, #tab, #sm, #md, #lg, #xl { display: none; }
-			#xxl { display: block; }
-			color: $aqua;
-		}
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: MAIN ****/
-
-	/* #region //* ANCHOR: Colors */
-
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Vars */
-
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-		html {
-			@include text(62.5%, $text, $sans1);
-			scrollbar-color: $mainScroll $mainScrollBg;
-		}
-
-		body {
-			@include text($align: center, $color: $text);
-			background-color: $bodyBg;
-			overflow-x: hidden;
-			height: 100vh;
-		}
-
-		#adminBtns {
-			@if ($adminBtns == 0) { display: none; }
-			@include a($fix: 1, $m: 0 auto, $z: 5000);
-		}
-
-		.mob {display: block; }
-		.dt { display: none; }
-		.hide { display: none; }
-
-		.top { top: 0 }
-		.bot { bottom: 0 }
-
-		hr { height: 2px; }
-
-		main { @include a($bg: $mainBg, $z: -100); }
-
-		.pageBg {
-			@include a($fix: 1, $wh: 100%);
-			background-image: url("../images/backgrounds/stationary-page-bg.jpg");
-			background-position: center center;
-			background-repeat: repeat;
-		}
-
-		i {	position: relative; }
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.mob { display: none; }
-		.dt { display: block; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.paddedSection {
-			@include a($px: 64px);
-			p, h1, h2, h3, h4, ul {
-				@include a($mx: auto, $max: 1200px);
-			}
-		}
-
-		p, table { @include text(1.8rem, 2.45rem); }
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: TEXT ****/
-
-	/* #region //* ANCHOR: Vars */
-
-		$moreLink: $alGradV;
-		$moreLink_h: $orange;
-
-		/* #region //* Headings */
-
-
-		/* #endregion */
-		/* #region //* Lead */
-
-		$leadWt    : 500;
-		$leadSz_m  : 1.7rem;	$leadHt_m  : 2.3rem;
-		$leadSz_tab: 1.7rem;	$leadHt_tab: 2.3rem;
-		$leadSz_sm : 1.8rem;	$leadHt_sm : 2.4rem;
-		$leadSz_md : 1.9rem;	$leadHt_md : 2.5rem;
-		$leadSz_lg : 2.0rem;	$leadHt_lg : 2.6rem;
-		$leadSz_xl : 2.2rem;	$leadHt_xl : 2.8rem;
-
-		/* #endregion */
-		/* #region //* Paragraphs */
-
-		$parWt    : 400;
-		$parSz_m  : 1.7rem;		$parHt_m  : 2.45rem;
-		$parSz_tab: 1.8rem;		$parHt_tab: 2.55rem;
-		$parSz_sm : 1.7rem;		$parHt_sm : 2.45rem;
-		$parSz_md : 1.75rem;	$parHt_md : 2.5rem;
-        $parSz_lg : 1.8rem;		$parHt_lg : 2.55rem;
-        $parSz_xl : 1.82rem;	$parHt_xl : 2.62rem;
-
-		/* #endregion */
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins & Extends */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	h1, h2 { display: none; }
-	h3 { @include text( $font: $ethno); }
-	h1, h2, h3, h4, h5 { text-transform: uppercase; }
-
-	p, table, ul li, ol li, label {
-		@include text($parSz_m, $text, $sans1, $parHt_m, 0.08rem, $parWt, $m: 0 auto);
-	}
-
-	p { margin-bottom: 1.2rem; }
-
-	a {
-		color: $link;
-		&:focus, &:hover {
-			color: $link_h;
-			text-decoration: none;
-			outline: none;
-		}
-	}
-
-	.headLead { @include a(0 auto, $w: 100%, $align: center); }
-
-	.head {
-		@include a(0 auto, $max: 560px, $w: 98%, $align: center);
-		img { width: 100%; }
-	}
-
-	.lead p {
-		@include text($leadSz_m, $ht: $leadHt_m, $wt: $leadWt, $space: 0.05rem );
-		@include a(0.4rem auto 2.4rem, $p: 0 2.4rem, $w: 100%, $max: 640px);
-		text-shadow: 3px 3px 3px $black50;
-	}
-
-	.moreLink {
-		@include a(0.4rem 0, $rel: 1, $r: 1.6rem, $w: 100%, $align: right);
-		@include text(1.7rem, $ht: 1.7rem, $font: $ethno);
-		@include gradLink($moreLink, $moreLink_h);
-		i {
-			@include a($rel: 1, $t: 3.5px, $ml: 3px);
-			@include text(2.1rem, $ht: 2.1rem);
-		}
-	}
-
-	.ubisoftSection {
-		.head { width: 100%; max-width: 380px; }
-		.lead p {
-			@include text(1.8rem, $ubiTxt, $veteran, 2.2rem);
-			max-width: 760px;
-		}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-		.lead p { @include text($leadSz_tab, $ht: $leadHt_tab); }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		p, table, main ul li { @include text($parSz_sm, $ht: $parHt_sm); }
-
-		.lead p {
-			@include text($leadSz_sm, $ht: $leadHt_sm);
-			@include a($max: 740px);
-		}
-		.head { @include a($max: 1120px, $w: 84%); }
-		.ubisoftSection {
-			.head { @include a($w: 100%, $max: 1020px); }
-			.lead p { @include text(1.9rem); }
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-		p, table, main ul li, ol li, label { @include text($parSz_md, $ht: $parHt_md); }
-		.lead p {
-			@include text($leadSz_md, $ht: $leadHt_md);
-			@include a($max: 800px);
-		}
-		.ubisoftSection .lead p {
-			@include text(2.2rem, $ht: 2.8rem);
-			@include a($max: 900px);
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-		.lead p {
-			@include text($leadSz_lg, $ht: $leadHt_lg);
-			@include a($max: 900px);
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		p, table, main ul li, main ol li, label { @include text($parSz_xl, $ht: $parHt_xl, $space: 0.13rem); }
-		.lead p {
-			@include text($leadSz_xl, $ht: $leadHt_xl);
-			@include a(0.8rem auto 2.6rem, $max: 1000px);
-		}
-		.ubisoftSection .lead p {
-			@include text(2.4rem, $ht: 3.0rem);
-			@include a($max: 1000px);
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: BUTTONS ****/
-
-	/* #region //* ANCHOR: Variables */
-
-		//* Main */
-		$btnText: white;
-		$btnText_h: $aqua;
-		$btnTextSpace: 0.02rem;
-		$btnTextSz_m : 1.6rem;
-		$btnTextHt_m: 1.7rem;
-
-		$btnBg: $white05;
-		$btnBg_h: $black;
-		$btnBorder: $white10;
-		$btnBorder_h: $aqua;
-		$btnBorderW: 2px;
-
-		$btnBlur: 90px;
-		$btnBlur_h: 90px;
-		$btnRad: 10px;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-	@mixin btn($text: null, $text_h: null, $bg: null, $bg_h: null, $border: null, $borderW: null, $w: null, $blur: null, $textSz: null, $space: null, $wt: null, $rad: null, $font: null, $border_h: null, $borderW_h: null, $m: null, $p: null, $my: null, $mx: null, $py: null, $px: null, $mt: null, $mr: null, $mb: null, $ml: null, $pt: null, $pr: null, $pb: null, $pl: null, ) {
-		@if ($w) { width: $w; }
-		@if ($p) { padding: $p; }
-		@if ($text) { color: $text; }
-		@if ($wt) { font-weight: $wt; }
-		@if ($rad) { border-radius: $rad; }
-		@if ($bg) { background-color: $bg; }
-		@if ($textSz) { font-size: $textSz; }
-		@if ($blur) { @include a($blur: $blur); }
-		@if ($space) { letter-spacing: $space; }
-		@if ($border) { border-color: $border; }
-		@if ($borderW) { border-width: $borderW; }
-		@if ($font) { @include text($font: $font); }
-		@if ($m) { margin: $m; }
-		@if ($p) { padding: $p; }
-		@if ($mx) {
-			margin-right: $mx;
-			margin-left: $mx;
-		}
-		@if ($my) {
-			margin-top: $my;
-			margin-bottom: $my;
-		}
-		@if ($px) {
-			padding-right: $px;
-			padding-left: $px;
-		}
-		@if ($py) {
-			padding-top: $py;
-			padding-bottom: $py;
-		}
-		@if ($mt) { margin-top: $mt; }
-		@if ($mb) { margin-bottom: $mb; }
-		@if ($mr) { margin-right: $mr; }
-		@if ($ml) { margin-left: $ml; }
-		@if ($pt) { padding-top: $pt; }
-		@if ($pb) { padding-bottom: $pb; }
-		@if ($pr) { padding-right: $pr; }
-		@if ($pl) { padding-left: $pl; }
-		&:hover, &:active, &:focus {
-			@if ($text_h) { color: $text_h; }
-			@if ($bg_h) { background: $bg_h; }
-			@if ($border_h) { border-color: $border_h; }
-			@if ($borderW_h) { border-width: $borderW_h; }
-		}
-	}
-
-    /* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	button, .clear .btn {
-		@include btn($btnText, $btnText_h, $btnBg, $btnBg_h, $btnBorder, $btnBorderW, 100%, $btnBlur, $btnTextSz_m, $btnTextSpace, 700, $btnRad, $ethno, $btnBorder_h, $p: 1.8rem 0);
-		@include text($align: center);
-		@include anim(0.3s);
-		text-transform: uppercase;
-		border-style: solid;
-		cursor: pointer;
-		&:hover, &:focus {
-			@include anim(0.3s);
-			text-decoration: none;
-			border-style: solid;
-		}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: MAIN-NAV ****/
-
-	/* #region //* ANCHOR: Mixins */
-
-	//* Main Navigation */
-	@mixin mainNav($wClosed: null, $wActive: null, $linkPadY: null, $linkSz: null, $linkPad: null, $padL: null, $iconSz: null, $phoneSz: null, $phoneIconSz: null, $phonePad: null, $sIconSz: null) {
-		@if ($wClosed) {
-			#mainNav { @include a($w: $wClosed); }
-		}
-		@if ($sIconSz) {
-			#socialBtns { @include text($sIconSz); }
-		}
-		#navLinks {
-			li {
-				@if ($wActive) { @include a($w: $wActive); }
-				@if ($linkPadY) { @include a($py: $linkPadY); }
-			}
-			.title {
-				@if ($linkSz) { @include text($linkSz, $ht: $linkSz); }
-				@if ($linkPad) { @include a($pt: $linkPad); }
-			}
-			.icon {
-				@if ($wClosed) { width: $wClosed; }
-				@if ($iconSz) { @include text($iconSz, $ht: $iconSz); }
-			}
-		}
-		#mainNav.active, #mainNav:hover {
-			@if ($wActive) { width: $wActive; }
-			#navLinks {
-				@if ($globalAnim) { @include anim($globalAnim); }
-				@if ($padL) { padding-left: $padL; }
-			}
-		}
-		#phoneInfo {
-			@if ($phoneIconSz) {
-				.icon { @include text($phoneIconSz, $ht: $phoneIconSz); }
-			}
-			.title {
-				@if ($phoneSz) { @include text($phoneSz, $ht: $phoneSz); }
-				@if ($phonePad) { @include a($rel: 1, $b: $phonePad); }
-			}
-		}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-		@include mainNav($navWidth_m, $navActive_m, $navLinkPadY_m, $navLinkSz_m, $navLinkTopPad_m, $marginL_m, $navIconSz_m, $navPhoneSz_m, $navPhoneIconSz_m, $navPhonePad_m, $navSocIconSz_m);
-
-		#pageHead { @include a($rel: 1, $t: 0px, $h: $lg_headHeight, $bg: black); }
-		#mobileLogo {
-			@include a($rel: 1, $t: 4px, $w: 18vh, $mx: auto);
-			opacity: 1;
-			a img { @include a($w: 100%, $h: 100%); }
-		}
-		#mainNav {
-			@include a($fix: 1, $l: $m_navOffset, $h: 100%, $bg: $navBg_m, $z: 99);
-			vertical-align: middle;
-			overflow: hidden;
-			a {
-				@include gradText($navLink);
-				font-family: $ethno;
-				text-decoration: none;
-				&:hover { @include gradText($navLink_h); }
-			}
-		}
-		#mainNav.active {
-			@include a($w: 100.5%, $l: 0px);
-			@include anim($globalAnim);
-			#sideLogo { opacity: 1; }
-			#navLinks, #bottomWrapper #phoneInfo, #socialBtns {
-				.title, .icon { opacity: 1; }
-			}
-		}
-		#sideLogo {
-			@include a(1.5vh 0, $abs: 1, $t: 0px, $w: 100%, $bg: $navBg);
-			opacity: 0;
-			a img { @include a(0 auto, $w: 34vh, $px: 0.6vh); }
-		}
-		#navLinks {
-			@include a(0 auto, $rel: 1, $w: 100%);
-			@include anim($globalAnim);
-			@include centerV;
-			li {
-				@include anim($globalAnim);
-				list-style: none;
-				a { @include a($rel: 1, $r: 1.2rem, $flex: 1); }
-			}
-			.icon { @include a($rel: 1, $display: block, $align: center); }
-			.title {
-				@include a($rel: 1, $align: start);
-				white-space: nowrap;
-			}
-			.title, .icon {
-				@include anim($globalAnim);
-				opacity: 0;
-			}
-		}
-		#bottomWrapper{
-			@include a($abs: 1, $b: 0, $pb: 5vh, $w: 100%);
-			@include anim;
-		}
-		#socialBtns {
-			@include a($mx: auto, $display: flex, $w: 260px, $mb: 0.4rem);
-			@include anim;
-			justify-content: space-around;
-			align-items: center;
-			.icon {
-				@include anim($globalAnim);
-				opacity: 0;
-			}
-		}
-		a #phoneInfo {
-			@include a($w: 100%, $min: 320px);
-			@include gradText($navLink);
-			text-decoration: none;
-			&:hover { @include gradText($navLink_h); }
-			.title, .icon {
-				@include anim($globalAnim);
-				opacity: 0;
-			}
-		}
-		.toggle {
-			@include a($togglePad, $abs: 1, $t: 0, $r: 0, $wh: $toggleIconSz, $z: 100);
-			@include anim($globalAnim);
-			border: 1px solid transparent;
-			cursor: pointer;
-			&::before { @include a($wh: 100%, $abs: 1, $align: center);	}
-		}
-		.toggle.active { opacity: 0; }
-		.toggle i, .toggle.active i, .toggle.hover i {
-			@include gradText($menuToggle);
-			font-size: $toggleIconSz;
-			top: 0;
-			&:hover {
-				@include gradText($menuToggle_h);
-				@include anim(0s);
-				color: $menuToggle_h;
-			}
-		}
-		#mainNav, #sideLogo, #socialBtns, #pageHead, #mobileLogo, #navLinks {
-			@include anim($globalAnim);
-		}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		@include mainNav($navWidth_sm, $navActive_sm, $navLinkPadY_sm, $navLinkSz_sm, $navLinkTopPad_sm, $marginL_sm, $navIconSz_sm, $navPhoneSz_sm, $navPhoneIconSz_sm, $navPhonePad_sm, $navSocIconSz_sm);
-
-		#mainNav { left: 0; }
-		#pageHead {
-			@include a($t: $lg_headOffset, $mb: $lg_headOffset);
-			#mobileLogo {
-				@include anim(2s);
-				opacity: 0;
-			}
-		}
-		#navLinks .title { @include a($t: -0.28px, $l: 0px); }
-		#navLinks li a { @include a($r: 0.4rem); }
-		#navLinks .icon { right: -3px; }
-		#navLinks .icon, #mainNav #sideLogo { opacity: 1; }
-		#mainNav.active, #mainNav:hover {
-			#navLinks, #phoneInfo, #socialBtns {
-				.title, .icon { opacity: 1; }
-			}
-		}
-		#socialBtns { @include a($w: 180px); }
-		a #phoneInfo { @include a($min: 220px, $max: 360px); }
-		.toggleMenu { opacity: 0; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		#socialBtns { width: 230px; }
-		a #phoneInfo { @include a($min: 300px, $max: 400px); }
-
-		@include mainNav($navWidth_xl, $navActive_xl, $navLinkPadY_xl, $navLinkSz_xl, $navLinkTopPad_xl, $marginL_lg, $navIconSz_xl, $navPhoneSz_xl, $navPhoneIconSz_xl, $navPhonePad_xl, $navSocIconSz_xl);
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: HEROES ****/
-
-    /* #region //* ANCHOR: Vars */
-
-	//* Gradient */
-
-	$heroGrad: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.2) 39.81%, rgba(0, 0, 0, 0.2) 59.81%, #000000 100%);
-
-	$m_heroHeight: calc(55vh - $lg_headHeight);
-
-	/* #endregion */
-	/* #region //* SECTION: Styles: MOB */
-
-		.hero {
-			@include a($rel: 1, $w: 102%);
-			h1 { display: none; }
-			img {
-				@include a($w: 100%, $h: $m_heroHeight);
-				object-fit: cover;
-			}
-		}
-		#heroGradient {
-			background-image: $heroGrad;
-			position: absolute;
-			inset: 0;
-		}
-		.heroText {
-			@include a($abs: 1, $b: 0px, $l: 48.7%, $w: 92%, $max: 580px);
-			transform: translate(-50%, 0vh);
-			img {
-				object-fit: contain;
-				width: 100%;
-			}
-		}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.heroText { @include a($l: 50.8%, $w: 85%, $max: 1300px); }
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-
-
-	}
-
-	/* #endregion /* !SECTION */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: HEROES (HOME) ****/
-
-    /* #region //* ANCHOR: Vars */
-
-	/* #endregion */
-	/* #region //* ANCHOR: Hero Gradients */
-
-		/* #region //* ANCHOR: What Realms Gradients */
-
-		$whatRealmsHeroGrad: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.4) 22.24%, rgba(0, 0, 0, 0.2) 47.53%, rgba(0, 0, 0, 0.1) 66.01%, rgba(0, 0, 0, 0.1) 87.62%, #000000 100%);
-
-		/* #endregion */
-		/* #region //* ANCHOR: Grand Opening Gradients */
-
-		$goHeroGrad: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.2) 9.76%, rgba(0, 0, 0, 0.2) 21.46%, rgba(0, 0, 0, 0.45) 34.6%, rgba(0, 0, 0, 0.45) 52.83%, rgba(0, 0, 0, 0.2) 64.31%, rgba(0, 0, 0, 0.2) 88.7%, #000000 100%);
-
-	/* #endregion */
-
-		//* Change which hero gradients are active */
-		$homeHeroGrad: $whatRealmsHeroGrad;
-
-		$homeHeroHeight_m: calc(100vh - $lg_headHeight);
-
-	/* #endregion */
-	/* #region //* SECTION: Styles: MOB */
-
-		.homeHero {
-			img { height: $homeHeroHeight_m; }
-			#heroGradient { background-image: $homeHeroGrad; }
-			.heroText { @include a($b: 12px, $l: 49.5%, $w: 92%, $max: 570px); }
-		}
-
-		.heroBtn {
-
-		}
-
-		.mobServHero {
-
-		}
-
-		.goHero {
-			.heroText { @include a($b: 12px, $l: 48.9%); }
-			#heroGradient { background-image: $goHeroGrad; }
-		}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.homeHero {
-			width: 101%;
-			img { height: 100vh; }
-			.heroText { @include a($w: 80%, $max: 1400px, $l: 51.2%); }
-		}
-
-		.goHero .heroText { @include a($w: 100%, $max: 600px); }
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-		.goHero .heroText { @include a($abs: 1, $b: 12px, $l: 50.5%, $w: 82%, $max: 1340px); }
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-	}
-
-	/* #endregion /* !SECTION */
-	/* #region //* SECTION: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-
-
-	}
-
-	/* #endregion /* !SECTION */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: SECTIONS ****/
-
-	/* #region //* ANCHOR: Vars */
-
-		//* Section BG Gradients */
-		$mainSecBgGradTop: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-		$mainSecBgGradBot: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-
-		$mainSecBgGrad: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.04) 70%, #000000 100%);
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.mainSection, footer {
-		@include a(0 auto, $rel: 1, $r: 0, $w: 100%);
-		overflow-x: hidden;
-	}
-	.bgImg {
-		@include a($wh: 100%);
-		img {
-			@include a($wh: 100%);
-			object-fit: cover;
-		}
-	}
-	.mainContent {
-		@include a(0 auto, $abs: 1, $t: 51%, $l: 50%, $w: 100%);
-		@include anim;
-		transform: translate(-50%, -50%);
-		overflow: hidden;
-	}
-	.secGradient { @include a($abs: 1, $r: 0, $l: 0, $h: 150px); }
-	.secGradientTop { @include a($t: 0, $bgImg: $mainSecBgGradTop);	}
-	.secGradientBot { @include a($b: 0, $bgImg: $mainSecBgGradBot); }
-	.cardSec .secGradient { @include a($h: 200px); }
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.mainContent { padding-left: $navWidth_sm; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.mainContent { padding-left: $navWidth_xl; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: CARDS (INC. GAME CARDS) ****/
-
-/* #region //* SECTION: Variables */
-
-	$cardsCount: 10;
-
-	$cardW     : 37rem;
-	$cardGap   : 0.8rem;
-	$cardBorderW : 2px;
-	$cardRadius  : 14px;
-	$cardBgBlur  : 80px;
-	$cardOpacity : 0.01;
-	$cardIconSz: 1.8rem;
-	$cardPadY  : 2.4rem;
-	$cardBtnGap: 1.0rem;
-	$cardH3space : 0.1rem;
-	$cardInnerGap: 0.4rem;
-	$cardTag     : 1.5rem;
-
-	$cardPadding_m : 0.8rem 1.2rem 1.4rem;
-	$cardPadding_sm: 0.8rem 1.2rem 1.4rem;
-
-	// Card Cover
-	$cardCoverTagBlur: 40px;
-	$cardCoverRadius: 12px;
-	$cardCoverTag   : 1.3rem;
-	$cardCoverTagRad: 50px;
-	$cardCoverTagM  : 0.8rem 1.0rem;
-	$cardCoverTagP  : 0.3rem 1.2rem 0.4rem;
-
-	$allStatGradBot: linear-gradient(0deg, black 0%, $invisible 100%);
-
-	/* #region //* ANCHOR: Colors */
-
-	//* Main Card Colors */
-	$cardTxt     : $text;
-	$cardBg      : $black80;
-	$cardBg_h    : $white05;
-	$cardBorder  : $white10;
-	$cardBorder_h: $white10;
-
-	$newTag: $green;
-	$hotTag: $orange;
-	$eChoiceTag: white;
-	$cardCoverTagBg : $black30;
-
-	$trailerbtnText_h: $pink;
-	$trailerBtnBorder_h: $pink;
-
-	$cardScroll  : $orange;
-	$cardScrollBg: $white10;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Ubisoft Cards */
-
-	$ubiCount      : 6;
-	$ubiFont       : $veteran;
-	$ubiScroll     : $ubiTxt;
-	$ubiScrollBg   : $black50;
-	$ubiCardTxt    : $ubiTxt;
-	$ubiCardBg     : $ubiBg;
-	$ubiCardBorder : rgb(177, 163, 120, 0.4);
-	$ubiBtnBg      : $ubiBg;
-	$ubiBtnBg_h    : $ubiTxt;
-	$ubibtnText     : $ubiTxt;
-	$ubibtnText_h   : $ubiBg;
-	$ubiBtnBorder  : rgba(177, 163, 120, 0.4);
-	$ubiBtnBorder_h: $ubiTxt;
-	$ubiCardBorderW: 2px;
-	$ubiBtnBorderW : 2px;
-	$ubiH3         : 2.2rem;
-	$ubiBtnGap     : 1.2rem;
-	$ubiPadY_m     : 2.4rem;
-	$ubiPadY_sm    : 3.2rem;
-	$ubiLabel      : 1.7rem;
-	$ubiH3space    : 0.05rem;
-	$ubiCoverTag   : 1.6rem;
-	$ubiCoverTagM  : 0.8rem;
-	$ubiCoverTagP  : 0.4rem 0.8rem;
-
-	$ubiCardW_sm: 480px;
-	$ubiCardW_xl: 560px;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Text */
-
-		$cardH3_m     : 1.85rem;
-		$cardH3_sm    : 1.6rem;
-		$cardH3_xl    : 1.8rem;
-		$cardHeadingWt: 600;
-
-		$cardLabelSz   : 1.6rem;
-		$cardLabelSz_sm: 1.6rem;
-		$cardLabelWt   : 500;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Section Heights */
-
-	$cardSecHt_m  : 700px;
-	$cardSecHt_tab: 710px;
-	$cardSecHt_sm : 650px;
-	$cardSecHt_md : 670px;
-	$cardSecHt_lg : 680px;
-	$cardSecHt_xl : 690px;
-
-	$ubiHt_m  : 670px;
-	$ubiHt_tab: '';
-	$ubiHt_sm : 780px;
-	$ubiHt_md : '';
-	$ubiHt_lg : '';
-	$ubiHt_xl : 840px;
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-/* #region //* SECTION: Mixins */
-
-	@mixin cards($count: null, $scroll: null, $scrollBg: null, $border: null, $h3: null, $h3space: null, $btnGap: null, $padY: null, $label: null, $coverTag: null, $coverTagBg: null, $coverTagM: null, $coverTagP: null, $iconSz: null, $w: null, $gap: null, $padX: null, $rad: null, $coverTagBlur: null, $coverTagRad: null, $coverRad: null, $blur: null, $tag: null, $color: null, $font: null, $bg: null) {
-		$gapCount: calc($count - 1);
-		@if ($bg) { .card { background-color: $bg; } }
-		@if ($padY) { .cardWrapper { @include a($pb: $padY); } }
-		@if ($scroll != null and $scrollBg) { .cardWrapper { scrollbar-color: $scroll $scrollBg; } }
-		@if ($gap) { .cards { gap: $gap; } }
-		@if ($padX) { .cards { @include a($px: $padX); } }
-		@if ($w) { .cards { width: calc( ($w * $count) + ($gap * $gapCount) + ($padX * 2) ); } }
-		@if ($w) { .card { width: $w; } }
-		@if ($blur) { .card { @include a($blur: $blur); } }
-		@if ($rad) { .card { border-radius: $rad; } }
-		@if ($border) { .card { border-color: $border; } }
-		@if ($iconSz) { .card { font-size: $iconSz; } }
-		@if ($btnGap) { .card .btns { gap: $btnGap; } }
-		@if ($font) { .card, .card h3, button, .coverTag { @include text($font: $font); } }
-		@if ($coverRad) {
-			.cardThumb {
-				clip-path: inset(0 round $coverRad $coverRad 0 0);
-				border-radius: $coverRad $coverRad 0 0;
-			}
-		}
-		@if ($h3) { .card h3 { @include text($h3, $ht: $h3); } }
-		@if ($h3space) { .card h3 { @include text($space: 0.1rem); } }
-		@if ($label) { .label { @include text($label); } }
-		@if ($tag) { .tag { font-size: $tag; } }
-		@if ($coverTag) { .coverTag { font-size: $coverTag; } }
-		@if ($coverTagBg) { .coverTag { background-color: $coverTagBg; } }
-		@if ($coverTagRad) { .coverTag { border-radius: $coverTagRad; } }
-		@if ($coverTagM) { .coverTag { margin: $coverTagM; } }
-		@if ($coverTagP) { .coverTag { padding: $coverTagP; } }
-		@if ($color) { .card, .cardInfo i { color: $color; } }
-		@if ($coverTagBlur) { .coverTag { @include a($blur: $coverTagBlur); } }
-	}
-
-	@mixin cardTag($color: null, $outline: null) {
-		@if ($color) {
-			color: $color;
-			outline-color: $color;
-		}
-		@if ($outline) { outline-color: $outline; }
-	}
-
-	@mixin cardSec($ht: null, $offset: null) {
-		@if ($offset) { .mainContent { transform: translate(-50%, $offset); } }
-		height: $ht;
-	}
-
-/* #endregion /* !SECTION */
-/* #region //* ANCHOR: Styles: MOB */
-
-	@include cards($cardsCount, $cardScroll, $cardScrollBg, $cardBorder, $cardH3_m, $cardH3space, $cardBtnGap, $cardPadY, $cardLabelSz, $cardCoverTag, $cardCoverTagBg, $cardCoverTagM, $cardCoverTagP, $cardIconSz, $cardW, $cardGap, $mainPad_m, $cardRadius, $cardCoverTagBlur, $cardCoverTagRad, $cardCoverRadius, $cardBgBlur, $cardTag);
-
-	.cardWrapper { overflow-x: scroll; }
-	.cards {
-		display: flex;
-		flex: auto auto auto auto auto auto;
-		overflow-x: hidden;
-		overflow-y: hidden;
-	}
-	.card {
-		border-width: $cardBorderW;
-		@include a($align: left);
-		.label { @include text($wt: 500); }
-		.label, p { text-shadow: 3px 3px 3.5px $black20; }
-		.age, .difficulty { @include a($w: 45%, $mr: -0.2rem, $align: right);	}
-		.topInfo, .bottomInfo, .btns { display: flex; }
-		.length, .players { width: 57% }
-		.bottomInfo { padding-top: 0.2rem; }
-		.catTags { margin: 0.8rem 0 0.8rem; }
-		i { @include a($mr: 0.3rem, $t: 0.25rem); }
-		.btns { padding-top: 1.2rem; }
-		h3 {
-			padding: 0.4rem 0;
-			// Truncate heading
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-		button { @include btn($textSz: 1.3rem); }
-	}
-	.tag {
-		@include text($wt: 500, $space: 0.025rem, $p: 4px 10px 6px, $mr: 6px);
-		background: $white10;
-		box-shadow: inset 1px 1px 2.5px $black20;
-		border-radius: 6px;
-		text-shadow: 1px 1px 2.5px $black30;
-	}
-	.newTag { @include cardTag($newTag); }
-	.hotTag { @include cardTag($hotTag); }
-	.eChoiceTag { @include cardTag($eChoiceTag, $white50 ); }
-	.cardThumb img {
-		object-fit: cover;
-		width: 100%;
-	}
-	.coverTag {
-		@include a($abs: 1, $t: 0, $r: 0, $blur: 40px);
-		@include text($wt: 700, $space: 0.05rem);
-		text-transform: uppercase;
-		outline: 1.5px solid;
-	}
-	.cardInfo {
-		@include text($p: $cardPadding_m);
-		@include anim(1.4s);
-	}
-	.cardInfo .truncate, .topInfo, .bottomInfo { @include a($px: 0.4rem); }
-	.trailerBtn {
-		&:hover, &:focus {
-			color: $trailerbtnText_h;
-			border: $btnBorderW solid $trailerBtnBorder_h;
-		}
-	}
-	.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection { @include cardSec($cardSecHt_m, -50.5%); }
-	.ubisoftSection {
-		@include cards($ubiCount, $ubiScroll, $ubiScrollBg, $ubiCardBorder, $ubiH3, $ubiH3space, $ubiBtnGap, $ubiPadY_m, $ubiLabel, $ubiCoverTag, $ubiBg, $ubiCoverTagM, $ubiCoverTagP, $w: $cardW, $gap: $cardGap, $padX: $mainPad_m, $color: $ubiCardTxt, $bg: $ubiCardBg, $font: $ubiFont);
-		height: $ubiHt_m;
-		.moreLink { display: none; }
-		.catTags { display: none; }
-		.bottomInfo { padding-top: 0.2rem; }
-		.card {
-			border-radius: 0px;
-			@include a($blur: 0px);
-			h3 { @include text($p: 0.4rem 0 0.8rem); }
-			.label { @include text($wt: 400); }
-		}
-		.cardInfo i {
-			font-size: 1.8rem;
-			top: 2px;
-		}
-		.cardThumb {
-			clip-path: inset(0 round 0 0 0 0);
-			border-radius: 0 0 0 0;
-		}
-		button {
-			@include text(1.7rem, $ubibtnText, $ht: 2.0rem, $space: 0.05rem);
-			border: $ubiBtnBorderW solid $ubiBtnBorder;
-			background: $ubiBtnBg;
-			border-radius: 0;
-			text-transform: none;
-			box-shadow: none;
-			&:hover, &:focus {
-				border: $ubiBtnBorderW solid $ubiBtnBorder_h;
-				background: $ubiBtnBg_h;
-				color: $ubibtnText_h;
-			}
-		}
-		.coverTag {
-			@include text($color: #d4c38f, $wt: 100, $space: 0.15rem);
-			outline-color: $ubiCardBorder;
-			border-radius: 0px;
-		}
-
-	}
-	.allGameCardsSection {
-		background: linear-gradient(180deg, $black10 0%, $black10 100%);
-		overflow: hidden;
-		.mainContent {
-			transform: none;
-			position: static;
-		}
-		.cards {
-			@include a(12px auto, $w: 100%, $max: 2100px);
-			display: grid;
-			grid-template-columns: 100%;
-			grid-gap: 8px;
-			align-items: center;
-			justify-content: space-evenly;
-		}
-		.card { @include a($w: 100%, $max: 900px, $min: 200px, $bg: rgba(255,255,255,0.005), $blur: 90px ); }
-		.allStationaryGrad { @include a($abs: 1, $l: 0, $w: 100%, $h: 20px, $z: 0);	}
-		.secGradientTop { display: none; }
-		.bot { background: $allStatGradBot;	}
-	}
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: TAB */
-
-@media (min-width: $query_TAB) {
-
-	.gameCard {
-		h3 { @include text(1.5rem); }
-		button { @include btn($textSz: 1.2rem); }
-	}
-	.ubisoftSection button {
-		@include text(1.7rem, $ht: 2.0rem);
-	}
-	.allGameCardsSection .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-	.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection { @include cardSec($cardSecHt_tab); }
-
+/* Document ========================================================================== */
+/** * 1. Correct the line height in all browsers. * 2. Prevent adjustments of font size after orientation changes in iOS. */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: SM */
-
-@media (min-width: $query_SM) {
-
-	@include cards(10, $h3: $cardH3_sm, $padX: $mainPad_sm, $w: $cardW, $gap: $cardGap);
-
-	.ubisoftSection {
-		@include cards($ubiCount, $w: $ubiCardW_sm, $gap: $cardGap, $padX: $mainPad_sm, $padY: $ubiPadY_sm);
-		height: $ubiHt_sm;
-	}
-	.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection { @include cardSec($cardSecHt_sm); }
-
+/* Sections ========================================================================== */
+/** Remove the margin in all browsers. */
+body {
+  margin: 0;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: MD */
-
-@media (min-width: $query_MD) {
-
-	.allGameCardsSection .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
+/** Render the `main` element consistently in IE. */
+main {
+  display: block;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: LG */
-
-@media (min-width: $query_LG) {
-
-	.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection { @include cardSec($cardSecHt_lg); }
-	.allGameCardsSection .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
+/** * Correct the font size and margin on `h1` elements within `section` and * `article` contexts in Chrome, Firefox, and Safari. */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: XL */
-
-@media (min-width: $query_XL) {
-
-	@include cards(10, $padX: $mainPad_xl, $w: $cardW, $gap: $cardGap, $h3: $cardH3_xl);
-	.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection { @include cardSec($cardSecHt_xl); }
-	.ubisoftSection {
-		@include cards($ubiCount, $w: $ubiCardW_xl, $gap: $cardGap, $padX: $mainPad_xl);
-		height: $ubiHt_xl;
-	}
-
+/* Grouping content ========================================================================== */
+/** * 1. Add the correct box sizing in Firefox. * 2. Show the overflow in Edge and IE. */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
-
+/** * 1. Correct the inheritance and scaling of font size in all browsers. * 2. Correct the odd `em` font sizing in all browsers. */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/* Text-level semantics ========================================================================== */
+/** * Remove the gray background on active links in IE 10. */
+a {
+  background-color: transparent;
+}
+/** * 1. Remove the bottom border in Chrome 57- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  /* 2 */
+}
+/** * Add the correct font weight in Chrome, Edge, and Safari. */
+b, strong {
+  font-weight: bolder;
+}
+/** * 1. Correct the inheritance and scaling of font size in all browsers. * 2. Correct the odd `em` font sizing in all browsers. */
+code, kbd, samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/** * Add the correct font size in all browsers. */
+small {
+  font-size: 80%;
+}
+/** * Prevent `sub` and `sup` elements from affecting the line height in * all browsers. */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content ========================================================================== */
+/** * Remove the border on images inside links in IE 10. */
+img {
+  border-style: none;
+}
+/* Forms ========================================================================== */
+/** * 1. Change the font styles in all browsers. * 2. Remove the margin in Firefox and Safari. */
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+/** * Show the overflow in IE. * 1. Show the overflow in Edge. */
+button, input {
+  /* 1 */
+  overflow: visible;
+}
+/** * Remove the inheritance of text transform in Edge, Firefox, and IE. * 1. Remove the inheritance of text transform in Firefox. */
+button, select {
+  /* 1 */
+  text-transform: none;
+}
+/** * Correct the inability to style clickable types in iOS and Safari. */
+button, [type="button"], [type="reset"], [type="submit"] {
+  appearance: button;
+  -webkit-appearance: button;
+}
+/** * Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/** * Restore the focus styles unset by the previous rule. */
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/** * Correct the padding in Firefox. */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+/** * 1. Correct the text wrapping in Edge and IE. * 2. Correct the color inheritance from `fieldset` elements in IE. * 3. Remove the padding so developers are not caught out when they zero out * `fieldset` elements in all browsers. */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+/** * Add the correct vertical alignment in Chrome, Firefox, and Opera. */
+progress {
+  vertical-align: baseline;
+}
+/** * Remove the default vertical scrollbar in IE 10+. */
+textarea {
+  overflow: auto;
+}
+/** * 1. Add the correct box sizing in IE 10. * 2. Remove the padding in IE 10. */
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/** * Correct the cursor style of increment and decrement buttons in Chrome. */
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/** * 1. Correct the odd appearance in Chrome and Safari. * 2. Correct the outline style in Safari. */
+[type="search"] {
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+/** * Remove the inner padding in Chrome and Safari on macOS. */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/** * 1. Correct the inability to style clickable types in iOS and Safari. * 2. Change font properties to `inherit` in Safari. */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+/* Interactive ========================================================================== */
+/* * Add the correct display in Edge, IE 10+, and Firefox. */
+details {
+  display: block;
+}
+/* * Add the correct display in all browsers. */
+summary {
+  display: list-item;
+}
+/* Misc ========================================================================== */
+/** * Add the correct display in IE 10+. */
+template {
+  display: none;
+}
+/** * Add the correct display in IE 10. */
+[hidden] {
+  display: none;
+}
+/** * Manually forked from SUIT CSS Base: https://github.com/suitcss/base * A thin layer on top of normalize.css that provides a starting point more * suitable for web applications. */
+/** * Removes the default spacing and border for appropriate elements. */
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+  margin: 0;
+}
+button {
+  background-color: transparent;
+  background-image: none;
+}
+/** * Work around a Firefox/IE bug where the transparent `button` background * results in a loss of the default `button` focus styles. */
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/** * Tailwind custom reset styles */
+/** * 1. Use the user's configured `sans` font-family (with Tailwind's default * sans-serif font stack as a fallback) as a sane default. * 2. Use Tailwind's default "normal" line-height so the user isn't forced * to override it to ensure consistency even when using the default theme. */
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 1 */
+  line-height: 1.5;
+  /* 2 */
+}
+/** * 1. Prevent padding and border from affecting element width. * * We used to set this in the html element and inherit from * the parent element for everything else. This caused issues * in shadow-dom-enhanced elements like <details> where the content * is wrapped by a div with box-sizing set to `content-box`. * * https://github.com/mozdevs/cssremedy/issues/4 * * * 2. Allow adding a border to an element by just adding a border-width. * * By default, the way the browser specifies that an element should have no * border is by setting it's border-style to `none` in the user-agent * stylesheet. * * In order to easily add borders to elements by just setting the `border-width` * property, we change the default border-style for all elements to `solid`, and * use border-width to hide them instead. This way our `border` utilities only * need to set the `border-width` property instead of the entire `border` * shorthand, making our border utilities much more straightforward to compose. * * https://github.com/tailwindcss/tailwindcss/pull/116 */
+*, ::before, ::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e2e8f0;
+  /* 2 */
+}
+/* * Ensure horizontal rules are visible by default */
+hr {
+  border-top-width: 1px;
+}
+/** * Undo the `border-style: none` reset that Normalize applies to images so that * our `border-{
+	width
+}
+` utilities have the expected effect. * * The Normalize reset is unnecessary for us since we default the border-width * to 0 on all elements. * * https://github.com/tailwindcss/tailwindcss/issues/362 */
+img {
+  border-style: solid;
+}
+textarea {
+  resize: vertical;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #a0aec0;
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: #a0aec0;
+}
+input::placeholder, textarea::placeholder {
+  color: #a0aec0;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+table {
+  border-collapse: collapse;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+/** * Reset links to optimize for opt-in styling instead of * opt-out. */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+/** * Reset form element properties that are easy to forget to * style explicitly so you don't inadvertently introduce * styles that deviate from your design system. These styles * supplement a partial reset that is already applied by * normalize.css. */
+button, input, optgroup, select, textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+/** * Use the configured 'mono' font family for elements that * are expected to be rendered with a monospace font, falling * back to the system monospace stack if there is no configured * 'mono' font family. */
+pre, code, kbd, samp {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/** * Make replaced elements `display: block` by default as that's * the behavior you want almost all of the time. Inspired by * CSS Remedy, with `svg` added as well. * * https://github.com/mozdevs/cssremedy/issues/14 */
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  vertical-align: middle;
+}
+/** * Constrain images and videos to the parent width and preserve * their instrinsic aspect ratio. * * https://github.com/mozdevs/cssremedy/issues/14 */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+/* #endregion */
+/* #region /
+/**** SECTION: FROST DS ****/
+/* #region /
+/* ANCHOR: Media Queries */
+/* #endregion */
+/* #region /
+/* SECTION: Colors */
+/* #region /
+/* ANCHOR: System */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Typography */
+/* #region /
+/* ANCHOR: Fonts */
+/* #endregion */
+/* #region /
+/* ANCHOR: Font Stacks */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: COLORS ****/
+/* #region /
+/* SECTION: Brand */
+/* #region /
+/* ANCHOR: Transparent */
+/* #endregion */
+/* #region /
+/* ANCHOR: Gradients */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* ANCHOR: Ubisoft */
+/* #endregion */
+/* #region /
+/* ANCHOR: Tokens */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: TYPOGRAPHY ****/
+/* #region /
+/* ANCHOR: Fonts */
+/* #region /
+/* Ethnocentric */
+/* Regular */
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("../fonts/ethnocentric/ethnocentric rg.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Italic */
+@font-face {
+  font-family: "Ethnocentric";
+  src: url("../fonts/ethnocentric/ethnocentric rg it.otf");
+  font-weight: normal;
+  font-style: italic;
+}
+/* #endregion */
+/* #region /
+/* Veteran */
+/* Regular */
+@font-face {
+  font-family: "Veteran";
+  src: url("../fonts/veteran/veteran.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+/* #endregion */
+/* #endregion */
+/* #region /
+/* ANCHOR: Stacks */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: VARIABLES ****/
+/* #region /
+/* ANCHOR: Media Queries */
+/* #endregion */
+/* #region /
+/* ANCHOR: NavMenu */
+/* #endregion */
+/* #region /
+/* ANCHOR: Header */
+/* #endregion */
+/* #region /
+/* ANCHOR: Page */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: MIXINS ****/
+/* #region /
+/* ANCHOR: Animation */
+/* #endregion */
+/* #region /
+/* ANCHOR: Size & Alignment */
+/* #endregion */
+/* #region /
+/* SECTION: Text */
+/* #region /
+/* ANCHOR: Main Text */
+/* #endregion */
+/* #region /
+/* ANCHOR: Gradient Text */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* ANCHOR: Cards */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: BREAKPOINTS TAB ****/
+/* #region /
+/* ANCHOR: Styles: MOB */
+#breakpoints {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  color: #fc9d8f;
+  letter-spacing: 0;
+  padding: 8px 12px;
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  z-index: 50000;
+  background-color: #0d0d0d;
+  border-radius: 6px 6px 0px 0px;
+}
+#breakpoints #tab, #breakpoints #sm, #breakpoints #md, #breakpoints #lg, #breakpoints #xl, #breakpoints #xxl {
+  display: none;
+}
+#breakpoints #mob {
+  display: block;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  #breakpoints {
+    color: #80fcb0;
+  }
+  #breakpoints #mob, #breakpoints #sm, #breakpoints #md, #breakpoints #lg, #breakpoints #xl, #breakpoints #xxl {
+    display: none;
+  }
+  #breakpoints #tab {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  #breakpoints {
+    color: #6ac5f3;
+  }
+  #breakpoints #mob, #breakpoints #tab, #breakpoints #md, #breakpoints #lg, #breakpoints #xl, #breakpoints #xxl {
+    display: none;
+  }
+  #breakpoints #sm {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+@media (min-width: 1024px) {
+  #breakpoints {
+    color: #8d78ff;
+  }
+  #breakpoints #mob, #breakpoints #tab, #breakpoints #sm, #breakpoints #lg, #breakpoints #xl, #breakpoints #xxl {
+    display: none;
+  }
+  #breakpoints #md {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  #breakpoints {
+    color: #fc9d8f;
+  }
+  #breakpoints #mob, #breakpoints #tab, #breakpoints #sm, #breakpoints #md, #breakpoints #xl, #breakpoints #xxl {
+    display: none;
+  }
+  #breakpoints #lg {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  #breakpoints {
+    color: #80fcb0;
+  }
+  #breakpoints #mob, #breakpoints #tab, #breakpoints #sm, #breakpoints #md, #breakpoints #lg, #breakpoints #xxl {
+    display: none;
+  }
+  #breakpoints #xl {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+@media (min-width: 1900px) {
+  #breakpoints {
+    color: #6ac5f3;
+  }
+  #breakpoints #mob, #breakpoints #tab, #breakpoints #sm, #breakpoints #md, #breakpoints #lg, #breakpoints #xl {
+    display: none;
+  }
+  #breakpoints #xxl {
+    display: block;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: MAIN ****/
+/* #region /
+/* ANCHOR: Colors */
+/* #endregion */
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 62.5%;
+  color: #f1f1f1;
+  scrollbar-color: #6ac5f3 black;
+}
+body {
+  text-align: center;
+  color: #f1f1f1;
+  background-color: black;
+  overflow-x: hidden;
+  height: 100vh;
+}
+#adminBtns {
+  display: none;
+  margin: 0 auto;
+  position: fixed;
+  z-index: 5000;
+}
+.mob {
+  display: block;
+}
+.dt {
+  display: none;
+}
+.hide {
+  display: none;
+}
+.top {
+  top: 0;
+}
+.bot {
+  bottom: 0;
+}
+hr {
+  height: 2px;
+}
+main {
+  z-index: -100;
+  background-color: black;
+}
+.pageBg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-image: url("../images/backgrounds/stationary-page-bg.jpg");
+  background-position: center center;
+  background-repeat: repeat;
+}
+i {
+  position: relative;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .mob {
+    display: none;
+  }
+  .dt {
+    display: block;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .paddedSection {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+  .paddedSection p, .paddedSection h1, .paddedSection h2, .paddedSection h3, .paddedSection h4, .paddedSection ul {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+  }
+  p, table {
+    font-size: 1.8rem;
+    color: 2.45rem;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: TEXT ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #region /
+/* Headings */
+/* #endregion */
+/* #region /
+/* Lead */
+/* #endregion */
+/* #region /
+/* Paragraphs */
+/* #endregion */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins & Extends */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+h1, h2 {
+  display: none;
+}
+h3 {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+}
+p, table, ul li, ol li, label {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 2.45rem;
+  color: #f1f1f1;
+  letter-spacing: 0.08rem;
+  margin: 0 auto;
+}
+p {
+  margin-bottom: 1.2rem;
+}
+a {
+  color: #6ac5f3;
+}
+a:focus, a:hover {
+  color: #fc9d8f;
+  text-decoration: none;
+  outline: none;
+}
+.headLead {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.head {
+  margin: 0 auto;
+  width: 98%;
+  max-width: 560px;
+  text-align: center;
+}
+.head img {
+  width: 100%;
+}
+.lead p {
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 2.3rem;
+  letter-spacing: 0.05rem;
+  margin: 0.4rem auto 2.4rem;
+  padding: 0 2.4rem;
+  width: 100%;
+  max-width: 640px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.moreLink {
+  margin: 0.4rem 0;
+  width: 100%;
+  position: relative;
+  right: 1.6rem;
+  text-align: right;
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+}
+.moreLink a {
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.moreLink a:hover {
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.moreLink i {
+  margin-left: 3px;
+  position: relative;
+  top: 3.5px;
+  font-size: 2.1rem;
+  line-height: 2.1rem;
+}
+.ubisoftSection .head {
+  width: 100%;
+  max-width: 380px;
+}
+.ubisoftSection .lead p {
+  font-family: "Veteran", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #b1a378;
+  max-width: 760px;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  .lead p {
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  p, table, main ul li {
+    font-size: 1.7rem;
+    line-height: 2.45rem;
+  }
+  .lead p {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    max-width: 740px;
+  }
+  .head {
+    width: 84%;
+    max-width: 1120px;
+  }
+  .ubisoftSection .head {
+    width: 100%;
+    max-width: 1020px;
+  }
+  .ubisoftSection .lead p {
+    font-size: 1.9rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+@media (min-width: 1024px) {
+  p, table, main ul li, ol li, label {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+  .lead p {
+    font-size: 1.9rem;
+    line-height: 2.5rem;
+    max-width: 800px;
+  }
+  .ubisoftSection .lead p {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    max-width: 900px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  .lead p {
+    font-size: 2rem;
+    line-height: 2.6rem;
+    max-width: 900px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  p, table, main ul li, main ol li, label {
+    font-size: 1.82rem;
+    line-height: 2.62rem;
+    letter-spacing: 0.13rem;
+  }
+  .lead p {
+    font-size: 2.2rem;
+    line-height: 2.8rem;
+    margin: 0.8rem auto 2.6rem;
+    max-width: 1000px;
+  }
+  .ubisoftSection .lead p {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    max-width: 1000px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: BUTTONS ****/
+/* #region /
+/* ANCHOR: Variables */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+button, .clear .btn {
+  width: 100%;
+  padding: 1.8rem 0;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.6rem;
+  backdrop-filter: blur(90px);
+  letter-spacing: 0.02rem;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: 2px;
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  padding: 1.8rem 0;
+  text-align: center;
+  transition: all 0.3s ease-in-out 0s;
+  text-transform: uppercase;
+  border-style: solid;
+  cursor: pointer;
+}
+button:hover, .clear .btn:hover, button:active, .clear .btn:active, button:focus, .clear .btn:focus {
+  color: #6ac5f3;
+  background: black;
+  border-color: #6ac5f3;
+}
+button:hover, .clear .btn:hover, button:focus, .clear .btn:focus {
+  transition: all 0.3s ease-in-out 0s;
+  text-decoration: none;
+  border-style: solid;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: MAIN-NAV ****/
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+#mainNav {
+  width: 60px;
+}
+#socialBtns {
+  font-size: 4.4rem;
+}
+#navLinks li {
+  width: 40.7rem;
+  padding-top: 0.75vh;
+  padding-bottom: 0.75vh;
+}
+#navLinks .title {
+  font-size: 1.65rem;
+  line-height: 1.65rem;
+  padding-top: 0.42rem;
+}
+#navLinks .icon {
+  width: 60px;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
+}
+#mainNav.active, #mainNav:hover {
+  width: 40.7rem;
+}
+#mainNav.active #navLinks, #mainNav:hover #navLinks {
+  transition: all 0.7s ease-in-out 0s;
+  padding-left: 1.2rem;
+}
+#phoneInfo .icon {
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+}
+#phoneInfo .title {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  position: relative;
+  bottom: 0.6rem;
+}
+#pageHead {
+  height: 19vh;
+  position: relative;
+  top: 0px;
+  background-color: black;
+}
+#mobileLogo {
+  margin-right: auto;
+  margin-left: auto;
+  width: 18vh;
+  position: relative;
+  top: 4px;
+  opacity: 1;
+}
+#mobileLogo a img {
+  width: 100%;
+  height: 100%;
+}
+#mainNav {
+  height: 100%;
+  position: fixed;
+  left: calc($navWidth_m - $navWidth_m * 2);
+  z-index: 99;
+  background-color: black;
+  vertical-align: middle;
+  overflow: hidden;
+  left: -60px;
+}
+#mainNav a {
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  text-decoration: none;
+}
+#mainNav a:hover {
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#mainNav.active {
+  width: 100%;
+  left: 0px;
+  transition: all 0.7s ease-in-out 0s;
+}
+#mainNav.active #sideLogo {
+  opacity: 1;
+}
+#mainNav.active #navLinks .title, #mainNav.active #bottomWrapper #phoneInfo .title, #mainNav.active #socialBtns .title, #mainNav.active #navLinks .icon, #mainNav.active #bottomWrapper #phoneInfo .icon, #mainNav.active #socialBtns .icon {
+  opacity: 1;
+}
+#sideLogo {
+  margin: 1.5vh 0;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background-color: black;
+  opacity: 0;
+}
+#sideLogo a img {
+  margin: 0 auto;
+  padding-right: 0.6vh;
+  padding-left: 0.6vh;
+  width: 34vh;
+}
+#navLinks {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  transition: all 0.7s ease-in-out 0s;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#navLinks li {
+  transition: all 0.7s ease-in-out 0s;
+  list-style: none;
+}
+#navLinks li a {
+  position: relative;
+  right: 1.2rem;
+  display: flex;
+}
+#navLinks .icon {
+  position: relative;
+  text-align: center;
+  display: block;
+}
+#navLinks .title {
+  position: relative;
+  text-align: start;
+  white-space: nowrap;
+}
+#navLinks .title, #navLinks .icon {
+  transition: all 0.7s ease-in-out 0s;
+  opacity: 0;
+}
+#bottomWrapper {
+  padding-bottom: 5vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transition: all 1s ease-in-out 0s;
+}
+#socialBtns {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0.4rem;
+  width: 260px;
+  display: flex;
+  transition: all 1s ease-in-out 0s;
+  justify-content: space-around;
+  align-items: center;
+}
+#socialBtns .icon {
+  transition: all 0.7s ease-in-out 0s;
+  opacity: 0;
+}
+a #phoneInfo {
+  width: 100%;
+  min-width: 320px;
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+a #phoneInfo:hover {
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+a #phoneInfo .title, a #phoneInfo .icon {
+  transition: all 0.7s ease-in-out 0s;
+  opacity: 0;
+}
+.toggle {
+  margin: 20px;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.7s ease-in-out 0s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.toggle::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+}
+.toggle.active {
+  opacity: 0;
+}
+.toggle i, .toggle.active i, .toggle.hover i {
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 42px;
+  top: 0;
+}
+.toggle i:hover, .toggle.active i:hover, .toggle.hover i:hover {
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0s ease-in-out 0s;
+  color: #fc9d8f;
+}
+#mainNav, #sideLogo, #socialBtns, #pageHead, #mobileLogo, #navLinks {
+  transition: all 0.7s ease-in-out 0s;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  #mainNav {
+    width: 54px;
+  }
+  #socialBtns {
+    font-size: 3.2rem;
+  }
+  #navLinks li {
+    width: 33.8rem;
+    padding-top: 0.85vh;
+    padding-bottom: 0.85vh;
+  }
+  #navLinks .title {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    padding-top: 0.395rem;
+  }
+  #navLinks .icon {
+    width: 54px;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  #mainNav.active, #mainNav:hover {
+    width: 33.8rem;
+  }
+  #mainNav.active #navLinks, #mainNav:hover #navLinks {
+    transition: all 0.7s ease-in-out 0s;
+    padding-left: 0.4rem;
+  }
+  #phoneInfo .icon {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  #phoneInfo .title {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    position: relative;
+    bottom: 0.4rem;
+  }
+  #mainNav {
+    left: 0;
+  }
+  #pageHead {
+    margin-bottom: calc($lg_headHeight - $lg_headHeight * 2);
+    top: calc($lg_headHeight - $lg_headHeight * 2);
+  }
+  #pageHead #mobileLogo {
+    transition: all 2s ease-in-out 0s;
+    opacity: 0;
+  }
+  #navLinks .title {
+    top: -0.28px;
+    left: 0px;
+  }
+  #navLinks li a {
+    right: 0.4rem;
+  }
+  #navLinks .icon {
+    right: -3px;
+  }
+  #navLinks .icon, #mainNav #sideLogo {
+    opacity: 1;
+  }
+  #mainNav.active #navLinks .title, #mainNav:hover #navLinks .title, #mainNav.active #phoneInfo .title, #mainNav:hover #phoneInfo .title, #mainNav.active #socialBtns .title, #mainNav:hover #socialBtns .title, #mainNav.active #navLinks .icon, #mainNav:hover #navLinks .icon, #mainNav.active #phoneInfo .icon, #mainNav:hover #phoneInfo .icon, #mainNav.active #socialBtns .icon, #mainNav:hover #socialBtns .icon {
+    opacity: 1;
+  }
+  #socialBtns {
+    width: 180px;
+  }
+  a #phoneInfo {
+    min-width: 220px;
+    max-width: 360px;
+  }
+  .toggleMenu {
+    opacity: 0;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  #socialBtns {
+    width: 230px;
+  }
+  a #phoneInfo {
+    min-width: 300px;
+    max-width: 400px;
+  }
+  #mainNav {
+    width: 60px;
+  }
+  #socialBtns {
+    font-size: 3.8rem;
+  }
+  #navLinks li {
+    width: 41.2rem;
+  }
+  #navLinks .title {
+    font-size: 1.65rem;
+    line-height: 1.65rem;
+    padding-top: 0.42rem;
+  }
+  #navLinks .icon {
+    width: 60px;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
+  #mainNav.active, #mainNav:hover {
+    width: 41.2rem;
+  }
+  #mainNav.active #navLinks, #mainNav:hover #navLinks {
+    transition: all 0.7s ease-in-out 0s;
+  }
+  #phoneInfo .icon {
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+  }
+  #phoneInfo .title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    position: relative;
+    bottom: 0.5rem;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: HEROES ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* SECTION: Styles: MOB */
+.hero {
+  width: 100%;
+  position: relative;
+}
+.hero h1 {
+  display: none;
+}
+.hero img {
+  width: 100%;
+  height: calc(55vh - $lg_headHeight);
+  object-fit: cover;
+}
+#heroGradient {
+  background-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.2) 39.81%, rgba(0, 0, 0, 0.2) 59.81%, #000 100%);
+  position: absolute;
+  inset: 0;
+}
+.heroText {
+  width: 92%;
+  max-width: 580px;
+  position: absolute;
+  bottom: 0px;
+  left: 48.7%;
+  transform: translate(-50%, 0vh);
+}
+.heroText img {
+  object-fit: contain;
+  width: 100%;
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: TAB */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: SM */
+@media (min-width: 768px) {
+  .heroText {
+    width: 85%;
+    max-width: 1300px;
+    left: 50.8%;
+  }
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: MD */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: LG */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: XL */
+/* #endregion 
+/* !SECTION */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: HEROES (HOME) ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Hero Gradients */
+/* #region /
+/* ANCHOR: What Realms Gradients */
+/* #endregion */
+/* #region /
+/* ANCHOR: Grand Opening Gradients */
+/* #endregion */
+/* #endregion */
+/* #region /
+/* SECTION: Styles: MOB */
+.homeHero img {
+  height: calc(81vh);
+}
+.homeHero #heroGradient {
+  background-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.4) 22.24%, rgba(0, 0, 0, 0.2) 47.53%, rgba(0, 0, 0, 0.1) 66.01%, rgba(0, 0, 0, 0.1) 87.62%, #000 100%);
+}
+.homeHero .heroText {
+  width: 92%;
+  max-width: 570px;
+  bottom: 12px;
+  left: 49.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.goHero .heroText {
+  bottom: 12px;
+  left: 48.9%;
+}
+.goHero #heroGradient {
+  background-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.2) 9.76%, rgba(0, 0, 0, 0.2) 21.46%, rgba(0, 0, 0, 0.45) 34.6%, rgba(0, 0, 0, 0.45) 52.83%, rgba(0, 0, 0, 0.2) 64.31%, rgba(0, 0, 0, 0.2) 88.7%, #000 100%);
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: TAB */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: SM */
+@media (min-width: 768px) {
+  .homeHero {
+    width: 100%;
+  }
+  .homeHero img {
+    height: 100vh;
+  }
+  .homeHero .heroText {
+    width: 80%;
+    max-width: 1400px;
+    left: 51.2%;
+  }
+  .goHero .heroText {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: MD */
+@media (min-width: 1024px) {
+  .goHero .heroText {
+    width: 82%;
+    max-width: 1340px;
+    position: absolute;
+    bottom: 12px;
+    left: 50.5%;
+  }
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: LG */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Styles: XL */
+/* #endregion 
+/* !SECTION */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: SECTIONS ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.mainSection, footer {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  right: 0;
+  /*	overflow-x: hidden;*/
+}
+.bgImg {
+  width: 100%;
+  height: 100%;
+}
+.bgImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainContent {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transition: all 1s ease-in-out 0s;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.secGradient {
+  height: 150px;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+.secGradientTop {
+  top: 0;
+  background-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+}
+.secGradientBot {
+  bottom: 0;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+.cardSec .secGradient {
+  height: 200px;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .mainContent {
+    padding-left: 54px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .mainContent {
+    padding-left: 60px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: CARDS (INC. GAME CARDS) ****/
+/* #region /
+/* SECTION: Variables */
+/* #region /
+/* ANCHOR: Colors */
+/* #endregion */
+/* #region /
+/* ANCHOR: Ubisoft Cards */
+/* #endregion */
+/* #region /
+/* ANCHOR: Text */
+/* #endregion */
+/* #region /
+/* ANCHOR: Section Heights */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Mixins */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.cardWrapper {
+  padding-bottom: 2.4rem;
+}
+.card {
+  backdrop-filter: blur(80px);
+}
+.card {
+  border-radius: 14px;
+}
+.card {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.card {
+  font-size: 1.8rem;
+}
+.card .btns {
+  gap: 1rem;
+}
+.cardThumb {
+  clip-path: inset(0 round 12px 12px 0 0);
+  border-radius: 12px 12px 0 0;
+  display: block;
+}
+.card h3 {
+  font-size: 1.85rem;
+  line-height: 1.85rem;
+}
+.card h3 {
+  letter-spacing: 0.1rem;
+}
+.label {
+  font-size: 1.6rem;
+}
+.tag {
+  font-size: 1.5rem;
+}
+.coverTag {
+  font-size: 1.3rem;
+}
+.coverTag {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.coverTag {
+  border-radius: 50px;
+}
+.coverTag {
+  margin: 0.8rem 1rem;
+}
+.coverTag {
+  padding: 0.3rem 1.2rem 0.4rem;
+}
+.coverTag {
+  backdrop-filter: blur(40px);
+}
+.card {
+  border-width: 2px;
+  text-align: left;
+}
+.card .label {
+  font-weight: 500;
+}
+.card .label, .card p {
+  text-shadow: 3px 3px 3.5px rgba(0, 0, 0, 0.2);
+}
+.card .age, .card .difficulty {
+  margin-right: -0.2rem;
+  width: 45%;
+  text-align: right;
+}
+.card .topInfo, .card .bottomInfo, .card .btns {
+  display: flex;
+}
+.card .length, .card .players {
+  width: 57%;
+}
+.card .bottomInfo {
+  padding-top: 0.2rem;
+}
+.card .catTags {
+  margin: 0.8rem 0 0.8rem;
+}
+.card i {
+  margin-right: 0.3rem;
+  top: 0.25rem;
+}
+.card .btns {
+  padding-top: 1.2rem;
+}
+.card h3 {
+  padding: 0.4rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card button {
+  font-size: 1.3rem;
+}
+.tag {
+  font-weight: 500;
+  letter-spacing: 0.025rem;
+  padding: 4px 10px 6px;
+  margin-right: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 1px 2.5px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  text-shadow: 1px 1px 2.5px rgba(0, 0, 0, 0.3);
+}
+.newTag {
+  color: #80fcb0;
+  outline-color: #80fcb0;
+}
+.hotTag {
+  color: #fc9d8f;
+  outline-color: #fc9d8f;
+}
+.eChoiceTag {
+  color: white;
+  outline-color: white;
+  outline-color: rgba(255, 255, 255, 0.5);
+}
+.cardThumb img {
+  object-fit: cover;
+  width: 100%;
+}
+.coverTag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  backdrop-filter: blur(40px);
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  outline: 1.5px solid;
+}
+.cardInfo {
+  padding: 0.8rem 1.2rem 1.4rem;
+  transition: all 1.4s ease-in-out 0s;
+}
+.cardInfo .truncate, .topInfo, .bottomInfo {
+  padding-right: 0.4rem;
+  padding-left: 0.4rem;
+}
+.trailerBtn:hover, .trailerBtn:focus {
+  color: #dd85e4;
+  border: 2px solid #dd85e4;
+}
+.escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection {
+  height: 700px;
+}
+.escapeRoomsSection .mainContent, .kidsVRGamesSection .mainContent, .ourFavesSection .mainContent {
+  transform: translate(-50%, -50.5%);
+}
+.ubisoftSection {
+  height: 670px;
+}
+.ubisoftSection .card {
+  background-color: #181512;
+}
+.ubisoftSection .cardWrapper {
+  padding-bottom: 2.4rem;
+}
+.ubisoftSection .card {
+  border-color: #b1a378;
+}
+.ubisoftSection .card .btns {
+  gap: 1.2rem;
+}
+.ubisoftSection .card, .ubisoftSection .card h3, .ubisoftSection button, .ubisoftSection .coverTag {
+  font-family: "Veteran", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+.ubisoftSection .card h3 {
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+}
+.ubisoftSection .card h3 {
+  letter-spacing: 0.1rem;
+}
+.ubisoftSection .label {
+  font-size: 1.7rem;
+}
+.ubisoftSection .coverTag {
+  font-size: 1.6rem;
+}
+.ubisoftSection .coverTag {
+  background-color: #181512;
+}
+.ubisoftSection .coverTag {
+  margin: 0.8rem;
+}
+.ubisoftSection .coverTag {
+  padding: 0.4rem 0.8rem;
+}
+.ubisoftSection .card, .ubisoftSection .cardInfo i {
+  color: #b1a378;
+}
+.ubisoftSection .moreLink {
+  display: none;
+}
+.ubisoftSection .catTags {
+  display: none;
+}
+.ubisoftSection .bottomInfo {
+  padding-top: 0.2rem;
+}
+.ubisoftSection .card {
+  border-radius: 0px;
+  backdrop-filter: blur(0px);
+}
+.ubisoftSection .card h3 {
+  padding: 0.4rem 0 0.8rem;
+}
+.ubisoftSection .card .label {
+  font-weight: 400;
+}
+.ubisoftSection .cardInfo i {
+  font-size: 1.8rem;
+  top: 2px;
+}
+.ubisoftSection .cardThumb {
+  clip-path: inset(0 round 0 0 0 0);
+  border-radius: 0 0 0 0;
+  display: block;
+}
+.ubisoftSection button {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  color: #b1a378;
+  letter-spacing: 0.05rem;
+  border: 2px solid rgba(177, 163, 120, 0.4);
+  background: #181512;
+  border-radius: 0;
+  text-transform: none;
+  box-shadow: none;
+}
+.ubisoftSection button:hover, .ubisoftSection button:focus {
+  border: 2px solid #b1a378;
+  background: #b1a378;
+  color: #181512;
+}
+.ubisoftSection .coverTag {
+  font-weight: 100;
+  color: #d4c38f;
+  letter-spacing: 0.15rem;
+  outline-color: #b1a378;
+  border-radius: 0px;
+}
+.allGameCardsSection {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+  overflow: hidden;
+}
+.allGameCardsSection .mainContent {
+  transform: none;
+  position: static;
+}
+.allGameCardsSection .cards {
+  margin: 12px auto;
+  width: 100%;
+  max-width: 2100px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 8px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.allGameCardsSection .card {
+  width: 100%;
+  min-width: 200px;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.005);
+  backdrop-filter: blur(90px);
+}
+.allGameCardsSection .allStationaryGrad {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+}
+.allGameCardsSection .secGradientTop {
+  display: none;
+}
+.allGameCardsSection .bot {
+  background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  .gameCard h3 {
+    font-size: 1.5rem;
+  }
+  .gameCard button {
+    font-size: 1.2rem;
+  }
+  .ubisoftSection button {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+  .allGameCardsSection .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection {
+    height: 710px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .card h3 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+  .ubisoftSection {
+    height: 780px;
+  }
+  .ubisoftSection .cardWrapper {
+    padding-bottom: 3.2rem;
+  }
+  .escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection {
+    height: 650px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+@media (min-width: 1024px) {
+  .allGameCardsSection .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  .escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection {
+    height: 680px;
+  }
+  .allGameCardsSection .cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .card h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+  .escapeRoomsSection, .kidsVRGamesSection, .ourFavesSection {
+    height: 690px;
+  }
+  .ubisoftSection {
+    height: 840px;
+  }
+  .ubisoftSection .card {
+    width: 560px;
+  }
+}
 @media (min-width: 1760px) {
-
-	.allGameCardsSection .cards {
-		@include a($max: 2560px);
-		grid-template-columns: repeat(5, minmax(0, 1fr));
-	}
-
+  .allGameCardsSection .cards {
+    max-width: 2560px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
-
 /* #endregion */
-/* #region //* ANCHOR: Styles: XXL */
-
-@media (min-width: $query_XXL) {
-
-
-
-}
-
+/* #region /
+/* ANCHOR: Styles: XXL */
 @media (min-width: 2200px) {
-
-	.allGameCardsSection .cards { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-
+  .allGameCardsSection .cards {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
-
 /* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: PARTIES & EVENTS ****/
-
-	/* #region //* ANCHOR: Vars */
-
-	$m_eventCardW: 37.5rem;
-	$xxl_eventCardW: 37.5rem;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins & Extends */
-
-	@mixin eventCard($color) {
-		button { @include btn($color, $border: $color, $bg_h: $color); }
-	}
-
-	@mixin eventSec($color) {
-		border-color: $color;
-		button {
-			@include btn($color, $border: $color, $bg_h: $color);
-		}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.eventCardsSection, .eventsSection {
-		background-image: url("../images/backgrounds/events-bg.jpg");
-		background-position: center center;
-		background-repeat: repeat;
-		.mainContent {
-			@include a($pt: 4.4rem, $pb: 2.8rem, $pr: 0, $static: 1);
-			transform: translate(0, 0);
-			overflow: none;
-		}
-	}
-	.eventsSection {
-		h3 { display: none; }
-		padding: 0 $mainPad_m;
-		.mainContent { @include a(2.0rem auto 0, $pt: 4.4rem, $pb: 2.8rem);	}
-	}
-	.event {
-		@include a(0 auto 1.6rem, $blur: 15px);
-		border-width: 2px;
-		background-color: $black80;
-		.btns { @include a($px: 1.2rem); }
-		.contactBtn { @include a($mt: 1.2rem); }
-		button { @include btn($text_h: black, $bg: $invisible, $bg_h: black, $rad: 100px, $blur: 0px, $borderW: 2px); }
-	}
-	.eventCover img {
-		@include a($w: 100%, $h: auto);
-		object-fit: cover;
-	}
-	.eventInfo {
-		@include a($m: 2.0rem 0.8rem 2.4rem);
-		.heading { @include a(0.4rem auto 0.8rem, $max: 920px); }
-		.details { @include a($m: 0.8rem 1.2rem 2.0rem); }
-	}
-	.event1 { @include eventSec($orange); }
-	.event2 { @include eventSec($pink); }
-	.event3 { @include eventSec($lilac); }
-	.event4 { @include eventSec($aqua); }
-	.event5 { @include eventSec($green); }
-	.eventCardsSection {
-		.mainContent { @include a(0.8rem auto 0.6rem, $pt: 4.4rem, $pb: 2.8rem);	}
-		.cards {
-			margin: 0 auto;
-			@include a($px: $mainPad_m, $my: 0.4rem);
-			width: calc( ($m_eventCardW * 5) + ($cardGap * 4) + ($mainPad_m * 2) );
-		}
-		h3 { display: none; }
-		p {
-			@include a($mb: 0.6rem, $px: 0.2rem, $align: center);
-			@include text(1.7rem, $ht: 2.35rem);
-		}
-
-	}
-	.eventCard {
-		@include a($w: $m_eventCardW, $h: 52.4rem, $bg: $black50);
-		button {
-			@include btn($borderW: 1.5px, $rad: 100px, $textSz: 1.4rem, $w: 100%, $p: 1.8rem 1.2rem, $m: 0 auto 2.0rem auto, $bg: $invisible, $text_h: black);
-		}
-		.cardInfo {
-			p { @include text(1.65rem, $ht: 2.25rem, $space: 0.08rem, $m: 0.8rem auto); }
-			@include a($pt: 1.2rem);
-			.details { @include a($m: 0.8rem auto 0.2rem, $h: 164px); }
-			.heading { @include a($px: 0.6rem);	}
-		}
-	}
-	.eventCard1 { @include eventCard($orange); }
-	.eventCard2 { @include eventCard($pink); }
-	.eventCard3 { @include eventCard($lilac); }
-	.eventCard4 { @include eventCard($aqua); }
-	.eventCard5 { @include eventCard($green); }
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-		.event {
-			.contactBtn { margin-top: 0px; }
-			.btns {
-				@include a(0 auto, $max: 650px);
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-				gap: 1.2rem;
-			}
-		}
-		.eventInfo .details { @include a($m: 1.2rem auto 2.0rem, $px: 2.0rem); }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.eventsSection { padding: 0 6vw; }
-		.event {
-			.mob { display: block; }
-			.dt { display: none; }
-			.details { @include a($px: 3.2rem); }
-			button { @include btn($textSz: 1.5rem); }
-		}
-		.eventCover img {
-			@include a($maxH: 520px);
-			object-fit: cover;
-		}
-		.eventCardsSection {
-			p { @include text(1.6rem, $ht: 2.25rem); }
-			.cards {
-				@include a($px: $mainPad_sm);
-				width: calc( ($m_eventCardW * 5) + ($cardGap * 4) + ($mainPad_sm * 2) );
-			}
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-		.eventsSection {
-			padding: 0 $mainPad_lg;
-			.mob {display: none;}
-			.dt {display: block;}
-		}
-		.event {
-			@include a($mb: 2.0rem);
-			.btns { @include a($pr: auto, $pl: 0, $max: 430px); }
-			button {
-				@include a($w: 100%, $py: 1.7rem);
-				@include text(1.35rem);
-			}
-			@include a($max: 1520px, $h: auto);
-			display: grid;
-			grid-template-columns: 50% auto;
-            gap: 20px;
-			.btns { @include a($ml: 0px, $align: left); }
-		}
-		.eventInfo {
-			text-align: left;
-			.heading { @include a($max: 1020px); }
-			.heading .head {
-				@include a(0 auto 0 0px, $w: 75%, $px: 0vw, $align: left);
-				img { @include a(0 auto 0 0px, $px: 0); }
-			}
-			.details {
-				@include a($p: 0 2.0rem 0 0, $align: left);
-				p { @include text(1.55rem, $ht: 2.1rem); }
-			}
-		}
-		.eventCover img {
-			@include a($w: 100%, $h: 100%, $max: 100%, $maxH: 100%);
-			object-fit: cover;
-		}
-		.eventCardsSection .cards {
-			@include a($px: $mainPad_lg);
-			width: calc( ($m_eventCardW * 5) + ($cardGap * 4) + ($mainPad_lg * 2) );
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.eventCover img { @include a( $maxH: 454px); }
-		.event {
-			border-width: 3px;
-			@include a($maxH: 460px, $max: 1960px);
-		}
-		.eventCardsSection {
-			p { @include text(1.7rem, $ht: 2.35rem); }
-			.cards {
-				@include a($px: $mainPad_xl);
-				width: calc( ($m_eventCardW * 5) + ($cardGap * 4) + ($mainPad_xl * 2) );
-			}
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-		.eventInfo .details {
-			p { @include text(1.7rem, $ht: 2.25rem); }
-		}
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: CATEGORY BUTTONS ****/
-
-/* #region //* SECTION: Variables */
-
-
-	/* #region //* ANCHOR: Colors */
-
-
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-/* #region //* SECTION: Mixins */
-
-
-
-/* #endregion /* !SECTION */
-/* #region //* ANCHOR: Styles: MOB */
-
-	.stationaryCatsSection {
-		height: 420px;
-		margin-bottom: -20px;
-		width: 100%;
-		.headLead { display: none; }
-		.catWrapper .moreLink { display: none; }
-		.secGradientBot { display: none; }
-		.catBtns {
-			@include a($px: $mainPad_m);
-			width: 100%;
-		}
-		.btn {
-			@include text(1.2rem, $font: $ethno, $wt: 500, $space: 0.025rem, $mr: 6px, $mb: 6px);
-			@include a($blur: 80px, $py: 0.8rem);
-			background: black;
-			width: 48.2%;
-			border-radius: 100px;
-			border-width: 2px;
-			border-color: $navLink;
-			height: 54px;
-			@include anim(0s);
-			&:hover {
-				@include anim(0s);
-				border-color: $orange;
-				.icon, .title {
-					@include anim(0s);
-					@include gradText($orange);
-				}
-			}
-			&:active {
-				@include a($bg: $orange);
-				.icon, .title {
-					@include gradText(black);
-				}
-			}
-			.icon, .title {
-				@include gradText($navLink);
-			}
-			.title {
-				@include a($rel: 1, $t: -0.37rem);
-			}
-			.icon {
-				@include text(2.2rem, $mr: -0.3rem);
-				@include a($rel: 1, $t: 0.15rem);
-			}
-		}
-	}
-
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: PARTIES & EVENTS ****/
+/* #region /
+/* ANCHOR: Vars */
 /* #endregion */
-/* #region //* ANCHOR: Styles: TAB */
-
-@media (min-width: $query_TAB) {
-
-	.stationaryCatsSection {
-		height: 320px;
-		margin-bottom: -30px;
-		.btn {
-			@include text(1.2rem, $space: 0.025rem, $mr: 6px, $mb: 8px);
-			@include a($py: 0.8rem);
-			width: 32%;
-			height: 54px;
-			.title {
-				@include a($rel: 1, $t: -0.37rem);
-			}
-			.icon {
-				@include text(2.2rem, $mr: -0.3rem);
-				@include a($rel: 1, $t: 0.15rem);
-			}
-		}
-	}
-
-
+/* #region /
+/* ANCHOR: Mixins & Extends */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.eventCardsSection, .eventsSection {
+  background-image: url("../images/backgrounds/events-bg.jpg");
+  background-position: center center;
+  background-repeat: repeat;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: SM */
-
-@media (min-width: $query_SM) {
-
-	.stationaryCatsSection {
-		height: 290px;
-		margin-bottom: -20px;
-		.catBtns { @include a($px: $mainPad_sm); }
-		.btn { @include text($mr: 4px, $mb: 6px); }
-	}
-
+.eventCardsSection .mainContent, .eventsSection .mainContent {
+  padding-top: 4.4rem;
+  padding-bottom: 2.8rem;
+  padding-right: 0;
+  position: static;
+  transform: translate(0, 0);
+  overflow: none;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: MD */
-
-@media (min-width: $query_MD) {
-
-	.stationaryCatsSection {
-		height: 240px;
-		margin-bottom: -19px;
-		.btn { width: 24.3%; }
-	}
-
+.eventsSection {
+  padding: 0 4%;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: LG */
-
-@media (min-width: $query_LG) {
-
-	.stationaryCatsSection {
-		height: 190px;
-		margin-bottom: -22px;
-		overflow-y: hidden;
-		.btn { width: 16.15%; }
-		.catBtns { @include a($px: $mainPad_lg); }
-	}
-
+.eventsSection h3 {
+  display: none;
 }
-
-/* #endregion */
-/* #region //* ANCHOR: Styles: XL */
-
-@media (min-width: $query_XL) {
-
-	.stationaryCatsSection .catBtns { @include a($px: $mainPad_xl); }
-
+.eventsSection .mainContent {
+  margin: 2rem auto 0;
+  padding-top: 4.4rem;
+  padding-bottom: 2.8rem;
 }
-
+.event {
+  margin: 0 auto 1.6rem;
+  backdrop-filter: blur(15px);
+  border-width: 2px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.event .btns {
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+.event .contactBtn {
+  margin-top: 1.2rem;
+}
+.event button {
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+  border-width: 2px;
+}
+.event button:hover, .event button:active, .event button:focus {
+  color: black;
+  background: black;
+}
+.eventCover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.eventInfo {
+  margin: 2rem 0.8rem 2.4rem;
+}
+.eventInfo .heading {
+  margin: 0.4rem auto 0.8rem;
+  max-width: 920px;
+}
+.eventInfo .details {
+  margin: 0.8rem 1.2rem 2rem;
+}
+.event1 {
+  border-color: #fc9d8f;
+}
+.event1 button {
+  color: #fc9d8f;
+  border-color: #fc9d8f;
+}
+.event1 button:hover, .event1 button:active, .event1 button:focus {
+  background: #fc9d8f;
+}
+.event2 {
+  border-color: #dd85e4;
+}
+.event2 button {
+  color: #dd85e4;
+  border-color: #dd85e4;
+}
+.event2 button:hover, .event2 button:active, .event2 button:focus {
+  background: #dd85e4;
+}
+.event3 {
+  border-color: #8d78ff;
+}
+.event3 button {
+  color: #8d78ff;
+  border-color: #8d78ff;
+}
+.event3 button:hover, .event3 button:active, .event3 button:focus {
+  background: #8d78ff;
+}
+.event4 {
+  border-color: #6ac5f3;
+}
+.event4 button {
+  color: #6ac5f3;
+  border-color: #6ac5f3;
+}
+.event4 button:hover, .event4 button:active, .event4 button:focus {
+  background: #6ac5f3;
+}
+.event5 {
+  border-color: #80fcb0;
+}
+.event5 button {
+  color: #80fcb0;
+  border-color: #80fcb0;
+}
+.event5 button:hover, .event5 button:active, .event5 button:focus {
+  background: #80fcb0;
+}
+.eventCardsSection .mainContent {
+  margin: 0.8rem auto 0.6rem;
+  padding-top: 4.4rem;
+  padding-bottom: 2.8rem;
+}
+.eventCardsSection .cards {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.eventCardsSection h3 {
+  display: none;
+}
+.eventCardsSection p {
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+  margin-bottom: 0.6rem;
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 2.35rem;
+}
+.eventCard {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.eventCard button {
+  width: 100%;
+  padding: 1.8rem 1.2rem;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.4rem;
+  border-width: 1.5px;
+  margin: 0 auto 2rem auto;
+  padding: 1.8rem 1.2rem;
+}
+.eventCard button:hover, .eventCard button:active, .eventCard button:focus {
+  color: black;
+}
+.eventCard .cardInfo {
+  padding-top: 1.2rem;
+}
+.eventCard .cardInfo p {
+  font-size: 1.65rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.08rem;
+  margin: 0.8rem auto;
+}
+.eventCard .cardInfo .details {
+  margin: 0.8rem auto 0.2rem;
+  height: 164px;
+}
+.eventCard .cardInfo .heading {
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+}
+.eventCard1 button {
+  color: #fc9d8f;
+  border-color: #fc9d8f;
+}
+.eventCard1 button:hover, .eventCard1 button:active, .eventCard1 button:focus {
+  background: #fc9d8f;
+}
+.eventCard2 button {
+  color: #dd85e4;
+  border-color: #dd85e4;
+}
+.eventCard2 button:hover, .eventCard2 button:active, .eventCard2 button:focus {
+  background: #dd85e4;
+}
+.eventCard3 button {
+  color: #8d78ff;
+  border-color: #8d78ff;
+}
+.eventCard3 button:hover, .eventCard3 button:active, .eventCard3 button:focus {
+  background: #8d78ff;
+}
+.eventCard4 button {
+  color: #6ac5f3;
+  border-color: #6ac5f3;
+}
+.eventCard4 button:hover, .eventCard4 button:active, .eventCard4 button:focus {
+  background: #6ac5f3;
+}
+.eventCard5 button {
+  color: #80fcb0;
+  border-color: #80fcb0;
+}
+.eventCard5 button:hover, .eventCard5 button:active, .eventCard5 button:focus {
+  background: #80fcb0;
+}
 /* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: MODALS ****/
-
-	/* #region //* ANCHOR: Vars */
-
-	$modalW_m: 90%;
-	$modalW_sm: 80%;
-	$modalMaxW: 960px;
-
-	$modalHt_m: 85vh;
-
-	$modalBackdrop: $black30;
-	$modalBg: $black80;
-	$modalBorder: $white10;
-
-	$modalRadius: 12px;
-	$modalBorderW: 2px;
-	$modalBlur: 60px;
-	$modalBackdropBlur: 5px;
-
-	$modalHeaderRadius: calc($modalRadius - 2px);
-
-	$modalHeaderTxt: black;
-	$modalHeaderBg: $lilac;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.modal {
-		@include a($wh: 100%, $fix: 1, $t: 0, $l: 0, $z: 5000, $hide: 1, $bg: $modalBackdrop, $blur: $modalBackdropBlur);
-		img { @include a(1.6rem 0 0rem, $w: 100%); }
-		h3 {
-			@include text(2.25rem, $modalHeaderTxt, $ht: 2.6rem);
-			width: 85%;
-		}
-		.close {
-			@include text(48px, black, $ht: 48px, $wt: bold);
-			@include a($abs: 1, $t: -6px, $r: 10px);
-			&:hover, &:focus {
-				text-decoration: none;
-				cursor: pointer;
-			}
-		}
-		h4, h5, h6 { @include text($font: $ethno, $wt: 700, $mt: 1.6rem, $align: left); }
-		h4 { @include text(1.85rem, $font: $ethno, $space: 0.016rem, $ht: 2.7rem, $m: 1.6rem 0 1.2rem); }
-		h5 { @include text(1.6rem, $aqua, $space: 0.016rem, $mb: 0.4rem); }
-		h6 { @include text(1.45rem, $space: 0.016rem, $mb: 0.2rem); }
-		p, ul li { @include text($wt: 400, $align: left, $mb: 0.6rem); }
-		.topH4 {
-			margin-top: 0.4rem;
-			color: white;
-		}
-		.featHead { color: $green; }
-		.spaceHead { color: $pink; }
-		ul {
-			@include a($mr: 1.6rem, $ml: 1.6rem, $align: left);
-			list-style-type: square;
-		}
-		p, ul { margin-bottom: 1.2rem; }
-		.catTags {
-			@include a($p: 1.2rem 2.4rem 1.6rem, $w: 100%, $flex: 1, $align: left, $bg: black);
-			border-radius: 0 0 $modalHeaderRadius $modalHeaderRadius;
-			flex-wrap: wrap;
-			row-gap: 0.4rem;
-		}
-		.tag {
-			@include text(1.4rem, $orange, $space: 0.1rem, $m: 0.4rem 1.0rem 0.4rem 0, $p: 0.4rem 1.2rem 0.6rem, $wt: 600);
-			@include a($bg: $invisible, $blur: 0);
-			text-shadow: 0 0 0;
-			outline: solid 2px $orange;
-		}
-	}
-	.modal-content {
-		@include a(0 auto, 0, $abs: 1, $t: 51%, $l: 50%, $w: $modalW_m, $max: $modalMaxW, $flex: 1, $bg: $modalBg, $blur: $modalBlur);
-		max-height: $modalHt_m;
-		box-shadow: 0 4px 8px 0 $black20, 0 6px 20px 0 $black20;
-		transform: translate(-50%, -50%);
-		flex-direction: column;
-		justify-content: space-between;
-		animation-name: animatetop;
-		animation-duration: 0.5s;
-		border: {
-			radius: $modalRadius;
-			width: $modalBorderW;
-			color: $modalBorder;
-		}
-	}
-	.modalHeader {
-		@include a($p: 12px 16px 12px 24px, $w: 100%, $align: left, $flex: 1);
-		background-color: $modalHeaderBg;
-		border-radius: $modalHeaderRadius $modalHeaderRadius 0 0;
-		flex-direction: row;
-	}
-	.modal-body {
-		a { pointer-events: none; }
-		@include a( $p: 1.6rem 2.4rem);
-		p { letter-spacing: 0.045rem; }
-		scrollbar-color: $aqua black;
-		overflow: scroll;
-		.details { margin-top: 0.4rem; }
-	}
-	.ubisoftSection {
-		.modal {
-			h3 { @include text(2.5rem, $ubiBg, $ht: 2.8rem); }
-			h4, h5 { @include text(2.0rem, $ubiTxt, $ht: 2.6rem, $space: 0.016rem ); }
-			p { @include text(1.75rem, $ht: 2.4rem, $wt: 100, $space: 0.015rem); }
-			h3, h4, h5, p { @include text($font: $veteran, $space: 0.1rem, $align: left); }
-			h3, h4, h5 { @include text($wt: 900); }
-		}
-		.spaceHead { color: $ubiTxt; }
-		.close {
-			color: $ubiBg;
-			&:hover, &:focus { color: $ubiBg; }
-		}
-		.modal-content {
-			background-color: $ubiBg;
-			border: {
-				color: $ubiCardBorder;
-				radius: 0;
-				width: 0;
-			}
-		}
-		.modalHeader {
-			background-color: $ubiCardTxt;
-			border-radius: 0;
-		}
-		.modal-body { scrollbar-color: $ubiTxt black; }
-		.catTags { display: none; }
-	}
-
-	/* Add Animation */
-	@-webkit-keyframes animatetop {
-		from {opacity:0}
-		to {opacity:1}
-	}
-
-	@keyframes animatetop {
-		from {opacity:0}
-		to {opacity:1}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.modal-content { @include a($w: $modalW_sm); }
-		.modal-body {
-			@include a( $p: 2.0rem 3.2rem);
-			margin-bottom: -14px;
-			padding-bottom: 28px;
-		}
-		.modalHeader { @include a($px: 3.2rem); }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.modal {
-			h3 { @include text(2.65rem, $ht: 3.0rem); }
-			h4 { @include text(2.05rem, $ht: 2.9rem,  $m: 2.0rem 0 1.0rem); }
-			h5 { @include text(1.7rem, $mb: 0.4rem); }
-			h6 { @include text(1.5rem, $mb: 0.2rem); }
-			.close { @include a($t: -4.3px, $r: 12px); }
-			.tag { @include text(1.5rem, $mr: 1.0rem, $p: 0.4rem 1.4rem 0.7rem); }
-			.catTags { row-gap: 2.0rem; }
-		}
-		.ubisoftSection .modal {
-			h3 { @include text(2.7rem, $ht: 3.0rem); }
-			h4 { @include text(2.2rem, $ht: 2.2rem); }
-			p { @include text(1.85rem, $ht: 2.65rem, $space: 0.2rem); }
-		}
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: BROWSE LIBRARY ****/
-
-	/* #region //* ANCHOR: Vars */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.browseLibrarySection {
-		@include anim(1s);
-		height: 460px;
-		border-width: 2px 0px;
-		border-style: solid;
-		border-image: linear-gradient(to right, $orange, $lilac, $aqua, $green) 1;
-		.mainContent { transform: translate(-50%, -53%); }
-		button {
-			@include a($w: auto, $p: 1.8rem 1.6rem);
-			@include text(1.3rem, black);
-			@include anim($globalAnim);
-			border-radius: 5px;
-			background-image: $multiGradH;
-			border: $invisible solid 0px;
-			&:hover, &:focus { border: $invisible solid 0px; }
-		}
-		.secGradient { background-image: none; }
-	}
-	.browseLib {
-		@include a(0 auto, 2.4rem 2.0rem, $rel: 1, $w: 82%, $bg: black);
-		border-image: linear-gradient(to right, $orange, $lilac, $aqua, $green) 1;
-		border-width: 1.5px;
-		border-style: solid;
-		img { @include a(0 auto, $w: 100%);	}
-	}
-	.browseLibHead { @include a(0 auto 1.6rem, $w: 100%, $h: auto); }
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-		.browseLib { @include a($p: 3.6rem 3.5vw); }
-		.browseLibHead { margin-bottom: 2.2rem;	}
-		.browseLibrarySection {
-			.dt { display: block; }
-			.mob { display: none; }
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.browseLibrarySection {
-			button { @include text(1.4rem); }
-			@include a ($r: -27px);
-			border-width: 2.5px 0px;
-			height: 560px;
-		}
-		.browseLibHead { margin-bottom: 2.4rem;	}
-		.browseLib {
-			@include a($max: 1040px, $l: -27px);
-			border-width: 2.5px;
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.browseLibrarySection {
-			height: 720px;
-			button {
-				@include a($p: 2.0rem 2.0rem);
-				@include text(1.7rem);
-			}
-		}
-		.browseLibHead { margin-bottom: 2.8rem;	}
-		.browseLib {
-			@include a($p: 5.6rem 5.4vw 5.6rem 5.4vw, $w: 75%, $max: 1400px);
-			img { @include a(0 auto, $w: 100%);	}
-		}
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: FAQS ****/
-
-	/* #region //* ANCHOR: Vars */
-
-		//* FAQs BG Gradient */
-		$faqsBgGrad: linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 10.27%, rgba(0, 0, 0, 0) 87.36%, rgba(0, 0, 0, 0.2) 96.58%), linear-gradient(180deg, #000000 4.81%, rgba(0, 0, 0, 0.3) 29.56%, rgba(0, 0, 0, 0.15) 52.17%, rgba(0, 0, 0, 0.151088) 83.18%, #000000 100%);
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.faqsSection {
-		height: 680px;
-		h3, p {	text-align: left; }
-		p { @include text(1.65rem, white, $ht: 2.4rem, $p: 1.6rem 1.2rem 1.8rem); }
-		.mainSection .secGradient { background-image: $faqsBgGrad; }
-		h3 {
-			text-transform: capitalize;
-			&:active {
-				background-image: $multiGradH;
-				@include text($color: black);
-				font-weight: bold;
-			}
-		}
-		button {
-			@include a(0.4rem 0.6rem, $w: 56px, $h: 56px);
-			font-weight: 600;
-			border-radius: 0px;
-			text-transform: none;
-			&:active { color: $aqua; }
-		}
-		h3, button {
-			@include text(1.55rem, white, $sans1, $space: 0.08rem, $wt: 500, $p: 1.0rem 1.2rem 1.4rem);
-			@include a($bg: $black90, $blur: 25px);
-			@include anim(0s);
-			cursor: pointer;
-			border: 2px solid $white20;
-			&:active {
-				border-width: 2px 2px 0px 2px;
-				color: black;
-			}
-			&:hover, &:focus {
-				@include anim(0s);
-				color: $orange;
-				outline: $invisible solid 0px;
-			}
-		}
-	}
-	.faq { margin: 0.4rem auto; }
-	#faqs { @include a(1.2rem auto 0, $w: 82%, $max: 1040px); }
-	.faqDetails {
-		@include a($bg: $black90, $blur: 25px);
-		border: 2px solid $white20;
-		border-width: 0px 2px 2px 2px;
-		display: none;
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.faqsSection {
-			height: 620px;
-			button { @include a($mx: 0.4rem, $w: 52px, $h: 52px); }
-			h3, button { @include text(1.6rem, $p: 0.8rem 1.2rem 1.2rem); }
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-		.faqsSection { height: 680px; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		.faqsSection {
-			height: 840px;
-			button {
-				@include text(1.9rem);
-				@include a(0.4rem 0.6rem);
-			}
-			h3 { @include text(1.9rem, $ht: 2.6rem, $p: 1.2rem 2.0rem 1.4rem); }
-			p { @include text(1.95rem, $ht: 2.9rem, $p: 2.0rem 2.0rem 2.2rem); }
-		}
-		#faqs { @include a($w: 75%, $max: 1400px, $mt: 2.0rem); }
-		.faq { margin: 0.6rem auto; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: SUBSCRIBE ****/
-
-	/* #region //* ANCHOR: Vars */
-
-		$formInputBorder: $white10;
-		$formInputBorderA: $aqua;
-
-		$formInputPlaceholder: $aqua;
-		$formInputTxt: $white;
-		$formInputBg: $black80;
-		$formInputBgA: $black;
-
-		$formLabel: $white;
-
-		$formMessageBg: $aqua;
-		$formMessageTxt: black;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Mixins */
-
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	.subscribeSection {
-		height: 800px;
-		.lead p { margin-bottom: 0rem; }
-	}
-
-	#subscribe #mc_embed_signup {
-		@include a(0 auto, $w: 82%, $max: 600px, $pt: 1.2rem);
-		.btn {
-			@include a(2.0rem auto 2.0rem, $w: 260px);
-			background-color: black;
-			border-radius: 0px;
-			border-width: 2px;
-			border-color: black;
-			&:hover, &:focus {
-				color: $pink;
-				border-color: $pink;
-				border-width: 2px;
-			}
-		}
-		label {
-			@include text(1.7rem, white, $ethno, $space: 0.1rem, $wt: 500, $align: left);
-			margin: 1.2rem auto;
-			text-shadow: 3px 2.5px 2.5px $black40;
-		}
-		.indicates-required { display: none; }
-		.mc-field-group {
-			text-align: left;
-			margin-top: 1.6rem;
-			input {
-				@include a(6px auto 12px, 8px, $w: 100%, $blur: 15px);
-				@include text(2.0rem, $formInputPlaceholder);
-				background-color: $formInputBg;
-				border: 2px solid $formInputBorder;
-				box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.123);
-				margin-bottom: 0px;
-				&:active, &:focus {
-					color: $formInputTxt;
-					outline: none;
-					background-color: $formInputBgA;
-					box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0);
-					border: {
-						color: $formInputBorderA;
-						width: 2px;
-					}
-				}
-			}
-		}
-		div.mce_inline_error {
-			background-color: $formMessageBg;
-			color: $formMessageTxt;
-			font-size: 1.4rem;
-			line-height: 1.4rem;
-			padding-bottom: 0.8rem;
-		}
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		.subscribeSection { height: 770px; }
-
-		#subscribe #mc_embed_signup {
-			label {
-				@include text(1.7rem);
-			}
-			.mc-field-group {
-				input {
-					@include text(1.7rem);
-				}
-			}
-		}
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XXL */
-
-	@media (min-width: $query_XXL) {
-
-
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: FOOTER ****/
-
-	/* #region //* ANCHOR: Vars */
-
-	$footerBg: black;
-	$footerH2: $alGradV;
-	$footerLink: white;
-	$footerLink_h: $orange;
-	$footerHeadings: white;
-
-	$footerHt_m: 1070px;
-	$footerHt_tab: 650px;
-	$footerHt_sm: 488px;
-	$footerHt_md: 418px;
-	$footerHt_xl: 472px;
-
-	$footerPad_m: 28px 28px 32px;
-	$footerPad_tab: 28px 36px 20px;
-    $footerPad_sm: 24px 0 28px;
-    $footerPad_xl: 24px 0 20px;
-
-	$footerH2_m: 22px;
-	$footerH2_tab: 18px;
-	$footerH2_sm: 16px;
-	$footerH2_xl: 22px;
-
-	$footerLink_m: 18px;
-	$footerLink_tab: 17px;
-	$footerLink_sm: 16px;
-	$footerLink_xl: 18px;
-
-	$footerLinkHt_m: 3.8rem;
-	$footerLinkHt_tab: 3.4rem;
-	$footerLinkHt_sm: 3.0rem;
-	$footerLinkHt_xl: 3.6rem;
-
-	$footerIcon_m: 28px;
-	$footerIcon_tab: 26px;
-	$footerIcon_sm: 24px;
-	$footerIcon_xl: 28px;
-
-	$footerIconP_m: 3.5px;
-	$footerIconP_tab: 4.4px;
-	$footerIconP_sm: 4.5px;
-	$footerIconP_xl: 4.5px;
-
-	$socialIcon_m: 42px;
-	$socialIcon_tab: 38px;
-	$socialIcon_sm: 32px;
-	$socialIcon_xl: 36px;
-
-	$socialIconPad_m: 16px;
-	$socialIconPad_tab: 16px;
-	$socialIconPad_sm: 12px;
-	$socialIconPad_xl: 14px;
-
-	$copy_m: 18px;
-	$copy_tab: 18px;
-	$copy_sm: 16px;
-	$copy_xl: 17px;
-
-	$pw_m: 16px;
-	$pw_tab: 16px;
-	$pw_sm: 14px;
-	$pw_xl: 15px;
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MOB */
-
-	footer {
-		@include a($h: $footerHt_m, $bg: $footerBg);
-		overflow: hidden;
-		ul {
-			list-style: none;
-			padding: 4px 0 20px;
-			li {
-				@include text($footerLink_m, $ht: $footerLinkHt_m, $space: 0.07rem, $wt: 500);
-				a {
-					color: $footerLink;
-					&:hover, &:active { color: $footerLink_h; }
-				}
-			}
-		}
-		h2 {
-			@include a($p: 4px 0 0 6px, $align: left);
-			@include text($footerH2_m, $footerH2, $ethno);
-			display: inline-block;
-		}
-		i {
-			font-size: $footerIcon_m;
-			top: $footerIconP_m;
-		}
-		h2, i { @include gradText($alGradV); }
-	}
-	#footLogo {display: none;}
-	#bigFooter {
-		border-width: 2px 0px;
-		border-style: solid;
-		border-image: linear-gradient(to right, $orange, $lilac, $aqua, $green) 1;
-	}
-	#footerInner {
-		display: grid;
-		grid-template-columns: 1fr;
-		@include a(0 auto, $footerPad_m, $align: left);
-	}
-	#footerConnect {
-		padding: 4px 0;
-		.icon a i {
-			@include text($socialIcon_m, $mr: $socialIconPad_m);
-			@include gradText($white);
-			color: white;
-			&:hover, &:active {
-				@include gradText($orange);
-				color: $orange;
-				text-decoration: none;
-			}
-		}
-	}
-	#footerBottom {
-		@include a($p: 16px 0 40px, $w: 100%);
-		display: block;
-		small {
-			@include text($copy_m, $ht: 2.6rem, $align: center);
-			@include a($rel: 1, $r: 6px);
-		}
-		a {
-			text-decoration: underline;
-			color: white;
-			transition: 0.2s;
-			&:hover { color: $orange; }
-		}
-		#pw { font-size: $pw_m; }
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: TAB */
-
-	@media (min-width: $query_TAB) {
-
-		footer {
-			@include a($h: $footerHt_tab);
-			h2 { @include text($footerH2_tab); }
-			ul {
-				padding: 4px 0 12px;
-				li { @include text($footerLink_tab, $ht: $footerLinkHt_tab); }
-			}
-			i {
-				font-size: $footerIcon_tab;
-				top: $footerIconP_tab;
-			}
-		}
-		#footerInner {
-			@include a($p: $footerPad_tab);
-			grid-template-columns: 53.5% 1fr;
-		}
-		#footerConnect {
-			.icon a i { @include text($socialIcon_tab, $mr: $socialIconPad_tab); }
-		}
-		#footerBottom {
-			small { @include text($copy_tab); }
-			#pw { font-size: $pw_tab; }
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: SM */
-
-	@media (min-width: $query_SM) {
-
-		footer {
-			@include a($h: $footerHt_sm);
-			h2 { @include text($footerH2_sm); }
-			ul {
-				li {@include text($footerLink_sm, $ht: $footerLinkHt_sm);}
-			}
-			i {
-				font-size: $footerIcon_sm;
-				top: $footerIconP_sm;
-			}
-		}
-		#footerInner {
-			grid-template-columns: auto auto auto;
-			width: 80%;
-			max-width: 1020px;
-			@include a($p: $footerPad_sm);
-		}
-		#footerConnect {
-			.icon a i { @include text($socialIcon_sm, $mr: $socialIconPad_sm); }
-		}
-		#footerBottom {
-			@include a($p: 12px 0 24px);
-			small {
-				@include text($copy_sm, $ht: 2.4rem);
-			}
-			#pw { font-size: $pw_sm; }
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: MD */
-
-	@media (min-width: $query_MD) {
-
-		footer { @include a($h: $footerHt_md); }
-		#footerInner { grid-template-columns: auto auto auto auto; }
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: LG */
-
-	@media (min-width: $query_LG) {
-
-		#orgDesc {
-			display: inline-block;
-			a img {
-				width: 140px;
-				padding-bottom: 4px;
-			}
-		}
-
-	}
-
-	/* #endregion */
-	/* #region //* ANCHOR: Styles: XL */
-
-	@media (min-width: $query_XL) {
-
-		footer {
-			@include a($h: $footerHt_xl);
-			h2 { @include text($footerH2_xl); }
-			ul {
-				li {@include text($footerLink_xl, $ht: $footerLinkHt_xl);}
-			}
-			i {
-				font-size: $footerIcon_xl;
-				top: $footerIconP_xl;
-			}
-		}
-		#footerInner {
-			@include a($w: 73%, $max: 1360px);
-			@include a($p: $footerPad_xl);
-		}
-		#footerConnect {
-			.icon a i { @include text($socialIcon_xl, $mr: $socialIconPad_xl); }
-		}
-		#footerBottom {
-			@include a($p: 12px 0 32px);
-			small {
-				@include text($copy_xl, $ht: 2.4rem);
-			}
-			#pw { font-size: $pw_xl; }
-		}
-
-	}
-
-	/* #endregion */
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: ACCESSIBILITY ****/
-
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: PRINT ****/
-
-	@media print {
-		* {
-			color:#000;
-			box-shadow: none;
-			text-shadow: none;
-			background:transparent;
-		}
-		.navLogo { width: 100px; }
-		main {padding-top: 110px;}
-		html { background-color:#fff; font-size: 85%;}
-
-		/* Hide mainNav */
-		#ddmenu, #ddmenu ul, .donateBanner, .ddBtnWrapper,
-		#headerWrapper, #bigFooter, #socialBtns {
-			display: none;
-		}
-
-	}
-
-/* #endregion /* !SECTION */
-
-/* #region //**** SECTION: PLAYGROUND ****/
-
-
-
-
-/* #endregion /* !SECTION */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  .event .contactBtn {
+    margin-top: 0px;
+  }
+  .event .btns {
+    margin: 0 auto;
+    max-width: 650px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.2rem;
+  }
+  .eventInfo .details {
+    margin: 1.2rem auto 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .eventsSection {
+    padding: 0 6vw;
+  }
+  .event .mob {
+    display: block;
+  }
+  .event .dt {
+    display: none;
+  }
+  .event .details {
+    padding-right: 3.2rem;
+    padding-left: 3.2rem;
+  }
+  .event button {
+    font-size: 1.5rem;
+  }
+  .eventCover img {
+    max-height: 520px;
+    object-fit: cover;
+  }
+  .eventCardsSection p {
+    font-size: 1.6rem;
+    line-height: 2.25rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  .eventsSection {
+    padding: 0 24px;
+  }
+  .eventsSection .mob {
+    display: none;
+  }
+  .eventsSection .dt {
+    display: block;
+  }
+  .event {
+    margin-bottom: 2rem;
+    max-width: 1520px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 20px;
+  }
+  .event .btns {
+    padding-right: auto;
+    padding-left: 0;
+    max-width: 430px;
+  }
+  .event button {
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    width: 100%;
+    font-size: 1.35rem;
+  }
+  .event .btns {
+    margin-left: 0px;
+    text-align: left;
+  }
+  .eventInfo {
+    text-align: left;
+  }
+  .eventInfo .heading {
+    max-width: 1020px;
+  }
+  .eventInfo .heading .head {
+    margin: 0 auto 0 0px;
+    padding-right: 0vw;
+    padding-left: 0vw;
+    width: 75%;
+    text-align: left;
+  }
+  .eventInfo .heading .head img {
+    margin: 0 auto 0 0px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .eventInfo .details {
+    padding: 0 2rem 0 0;
+    text-align: left;
+  }
+  .eventInfo .details p {
+    font-size: 1.55rem;
+    line-height: 2.1rem;
+  }
+  .eventCover img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .eventCover img {
+    max-height: 454px;
+  }
+  .event {
+    border-width: 3px;
+    max-width: 1960px;
+    max-height: 460px;
+  }
+  .eventCardsSection p {
+    font-size: 1.7rem;
+    line-height: 2.35rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+@media (min-width: 1900px) {
+  .eventInfo .details p {
+    font-size: 1.7rem;
+    line-height: 2.25rem;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: CATEGORY BUTTONS ****/
+/* #region /
+/* SECTION: Variables */
+/* #region /
+/* ANCHOR: Colors */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* SECTION: Mixins */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.stationaryCatsSection {
+  height: 420px;
+  margin-bottom: -20px;
+  width: 100%;
+}
+.stationaryCatsSection .headLead {
+  display: none;
+}
+.stationaryCatsSection .catWrapper .moreLink {
+  display: none;
+}
+.stationaryCatsSection .secGradientBot {
+  display: none;
+}
+.stationaryCatsSection .catBtns {
+  padding-right: 4%;
+  padding-left: 4%;
+  width: 100%;
+}
+.stationaryCatsSection .btn {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.025rem;
+  margin-bottom: 6px;
+  margin-right: 6px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  backdrop-filter: blur(80px);
+  background: black;
+  width: 48.2%;
+  border-radius: 100px;
+  border-width: 2px;
+  border-color: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  height: 54px;
+  transition: all 0s ease-in-out 0s;
+}
+.stationaryCatsSection .btn:hover {
+  transition: all 0s ease-in-out 0s;
+  border-color: #fc9d8f;
+}
+.stationaryCatsSection .btn:hover .icon, .stationaryCatsSection .btn:hover .title {
+  transition: all 0s ease-in-out 0s;
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stationaryCatsSection .btn:active {
+  background-color: #fc9d8f;
+}
+.stationaryCatsSection .btn:active .icon, .stationaryCatsSection .btn:active .title {
+  background: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stationaryCatsSection .btn .icon, .stationaryCatsSection .btn .title {
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stationaryCatsSection .btn .title {
+  position: relative;
+  top: -0.37rem;
+}
+.stationaryCatsSection .btn .icon {
+  font-size: 2.2rem;
+  margin-right: -0.3rem;
+  position: relative;
+  top: 0.15rem;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  .stationaryCatsSection {
+    height: 320px;
+    margin-bottom: -30px;
+  }
+  .stationaryCatsSection .btn {
+    font-size: 1.2rem;
+    letter-spacing: 0.025rem;
+    margin-bottom: 8px;
+    margin-right: 6px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    width: 32%;
+    height: 54px;
+  }
+  .stationaryCatsSection .btn .title {
+    position: relative;
+    top: -0.37rem;
+  }
+  .stationaryCatsSection .btn .icon {
+    font-size: 2.2rem;
+    margin-right: -0.3rem;
+    position: relative;
+    top: 0.15rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .stationaryCatsSection {
+    height: 290px;
+    margin-bottom: -20px;
+  }
+  .stationaryCatsSection .catBtns {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .stationaryCatsSection .btn {
+    margin-bottom: 6px;
+    margin-right: 4px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+@media (min-width: 1024px) {
+  .stationaryCatsSection {
+    height: 240px;
+    margin-bottom: -19px;
+  }
+  .stationaryCatsSection .btn {
+    width: 24.3%;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  .stationaryCatsSection {
+    height: 190px;
+    margin-bottom: -22px;
+    overflow-y: hidden;
+  }
+  .stationaryCatsSection .btn {
+    width: 16.15%;
+  }
+  .stationaryCatsSection .catBtns {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .stationaryCatsSection .catBtns {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: MODALS ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+.modal img {
+  margin: 1.6rem 0 0rem;
+  width: 100%;
+}
+.modal h3 {
+  font-size: 2.25rem;
+  line-height: 2.6rem;
+  color: black;
+  width: 85%;
+}
+.modal .close {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 48px;
+  color: black;
+  position: absolute;
+  top: -6px;
+  right: 10px;
+}
+.modal .close:hover, .modal .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal h4, .modal h5, .modal h6 {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 1.6rem;
+}
+.modal h4 {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.85rem;
+  line-height: 2.7rem;
+  letter-spacing: 0.016rem;
+  margin: 1.6rem 0 1.2rem;
+}
+.modal h5 {
+  font-size: 1.6rem;
+  color: #6ac5f3;
+  letter-spacing: 0.016rem;
+  margin-bottom: 0.4rem;
+}
+.modal h6 {
+  font-size: 1.45rem;
+  letter-spacing: 0.016rem;
+  margin-bottom: 0.2rem;
+}
+.modal p, .modal ul li {
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 0.6rem;
+}
+.modal .topH4 {
+  margin-top: 0.4rem;
+  color: white;
+}
+.modal .featHead {
+  color: #80fcb0;
+}
+.modal .spaceHead {
+  color: #dd85e4;
+}
+.modal ul {
+  margin-right: 1.6rem;
+  margin-left: 1.6rem;
+  text-align: left;
+  list-style-type: square;
+}
+.modal p, .modal ul {
+  margin-bottom: 1.2rem;
+}
+.modal .catTags {
+  padding: 1.2rem 2.4rem 1.6rem;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  background-color: black;
+  border-radius: 0 0 calc($modalRadius - 2px) calc($modalRadius - 2px);
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+}
+.modal .tag {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fc9d8f;
+  letter-spacing: 0.1rem;
+  padding: 0.4rem 1.2rem 0.6rem;
+  margin: 0.4rem 1rem 0.4rem 0;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0);
+  text-shadow: 0 0 0;
+  outline: solid 2px #fc9d8f;
+}
+.modal-content {
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  max-width: 960px;
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(60px);
+  max-height: 85vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: space-between;
+  animation-name: animatetop;
+  animation-duration: 0.5s;
+  border-radius: 12px;
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.modalHeader {
+  padding: 12px 16px 12px 24px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  background-color: #8d78ff;
+  border-radius: calc($modalRadius - 2px) calc($modalRadius - 2px) 0 0;
+  flex-direction: row;
+}
+.modal-body {
+  padding: 1.6rem 2.4rem;
+  scrollbar-color: #6ac5f3 black;
+  overflow: scroll;
+}
+.modal-body a {
+  pointer-events: none;
+}
+.modal-body p {
+  letter-spacing: 0.045rem;
+}
+.modal-body .details {
+  margin-top: 0.4rem;
+}
+.ubisoftSection .modal h3 {
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  color: #181512;
+}
+.ubisoftSection .modal h4, .ubisoftSection .modal h5 {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: #b1a378;
+  letter-spacing: 0.016rem;
+}
+.ubisoftSection .modal p {
+  font-size: 1.75rem;
+  font-weight: 100;
+  line-height: 2.4rem;
+  letter-spacing: 0.015rem;
+}
+.ubisoftSection .modal h3, .ubisoftSection .modal h4, .ubisoftSection .modal h5, .ubisoftSection .modal p {
+  font-family: "Veteran", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  text-align: left;
+  letter-spacing: 0.1rem;
+}
+.ubisoftSection .modal h3, .ubisoftSection .modal h4, .ubisoftSection .modal h5 {
+  font-weight: 900;
+}
+.ubisoftSection .spaceHead {
+  color: #b1a378;
+}
+.ubisoftSection .close {
+  color: #181512;
+}
+.ubisoftSection .close:hover, .ubisoftSection .close:focus {
+  color: #181512;
+}
+.ubisoftSection .modal-content {
+  background-color: #181512;
+  border-color: #b1a378;
+  border-radius: 0;
+  border-width: 0;
+}
+.ubisoftSection .modalHeader {
+  background-color: #b1a378;
+  border-radius: 0;
+}
+.ubisoftSection .modal-body {
+  scrollbar-color: #b1a378 black;
+}
+.ubisoftSection .catTags {
+  display: none;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .modal-content {
+    width: 80%;
+  }
+  .modal-body {
+    padding: 2rem 3.2rem;
+    margin-bottom: -14px;
+    padding-bottom: 28px;
+  }
+  .modalHeader {
+    padding-right: 3.2rem;
+    padding-left: 3.2rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .modal h3 {
+    font-size: 2.65rem;
+    line-height: 3rem;
+  }
+  .modal h4 {
+    font-size: 2.05rem;
+    line-height: 2.9rem;
+    margin: 2rem 0 1rem;
+  }
+  .modal h5 {
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
+  }
+  .modal h6 {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
+  .modal .close {
+    top: -4.3px;
+    right: 12px;
+  }
+  .modal .tag {
+    font-size: 1.5rem;
+    padding: 0.4rem 1.4rem 0.7rem;
+    margin-right: 1rem;
+  }
+  .modal .catTags {
+    row-gap: 2rem;
+  }
+  .ubisoftSection .modal h3 {
+    font-size: 2.7rem;
+    line-height: 3rem;
+  }
+  .ubisoftSection .modal h4 {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+  .ubisoftSection .modal p {
+    font-size: 1.85rem;
+    line-height: 2.65rem;
+    letter-spacing: 0.2rem;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: BROWSE LIBRARY ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.browseLibrarySection {
+  transition: all 1s ease-in-out 0s;
+  height: 460px;
+  border-width: 2px 0px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #fc9d8f, #8d78ff, #6ac5f3, #80fcb0) 1;
+}
+.browseLibrarySection .mainContent {
+  transform: translate(-50%, -53%);
+}
+.browseLibrarySection button {
+  padding: 1.8rem 1.6rem;
+  width: auto;
+  font-size: 1.3rem;
+  color: black;
+  transition: all 0.7s ease-in-out 0s;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #fc9d8f 0%, #dd85e4 20%, #8d78ff 40%, #577bfc 60%, #6ac5f3 80%, #80fcb0 100%);
+  border: rgba(0, 0, 0, 0) solid 0px;
+}
+.browseLibrarySection button:hover, .browseLibrarySection button:focus {
+  border: rgba(0, 0, 0, 0) solid 0px;
+}
+.browseLibrarySection .secGradient {
+  background-image: none;
+}
+.browseLib {
+  margin: 0 auto;
+  padding: 2.4rem 2rem;
+  width: 82%;
+  position: relative;
+  background-color: black;
+  border-image: linear-gradient(to right, #fc9d8f, #8d78ff, #6ac5f3, #80fcb0) 1;
+  border-width: 1.5px;
+  border-style: solid;
+}
+.browseLib img {
+  margin: 0 auto;
+  width: 100%;
+}
+.browseLibHead {
+  margin: 0 auto 1.6rem;
+  width: 100%;
+  height: auto;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  .browseLib {
+    padding: 3.6rem 3.5vw;
+  }
+  .browseLibHead {
+    margin-bottom: 2.2rem;
+  }
+  .browseLibrarySection .dt {
+    display: block;
+  }
+  .browseLibrarySection .mob {
+    display: none;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .browseLibrarySection {
+    right: -27px;
+    border-width: 2.5px 0px;
+    height: 560px;
+  }
+  .browseLibrarySection button {
+    font-size: 1.4rem;
+  }
+  .browseLibHead {
+    margin-bottom: 2.4rem;
+  }
+  .browseLib {
+    max-width: 1040px;
+    left: -27px;
+    border-width: 2.5px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .browseLibrarySection {
+    height: 720px;
+  }
+  .browseLibrarySection button {
+    padding: 2rem 2rem;
+    font-size: 1.7rem;
+  }
+  .browseLibHead {
+    margin-bottom: 2.8rem;
+  }
+  .browseLib {
+    padding: 5.6rem 5.4vw 5.6rem 5.4vw;
+    width: 75%;
+    max-width: 1400px;
+  }
+  .browseLib img {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: FAQS ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.faqsSection {
+  height: 680px;
+}
+.faqsSection h3, .faqsSection p {
+  text-align: left;
+}
+.faqsSection p {
+  font-size: 1.65rem;
+  line-height: 2.4rem;
+  color: white;
+  padding: 1.6rem 1.2rem 1.8rem;
+}
+.faqsSection .mainSection .secGradient {
+  background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 10.27%, rgba(0, 0, 0, 0) 87.36%, rgba(0, 0, 0, 0.2) 96.58%), linear-gradient(180deg, #000 4.81%, rgba(0, 0, 0, 0.3) 29.56%, rgba(0, 0, 0, 0.15) 52.17%, rgba(0, 0, 0, 0.151088) 83.18%, #000 100%);
+}
+.faqsSection h3 {
+  text-transform: capitalize;
+}
+.faqsSection h3:active {
+  background-image: linear-gradient(90deg, #fc9d8f 0%, #dd85e4 20%, #8d78ff 40%, #577bfc 60%, #6ac5f3 80%, #80fcb0 100%);
+  color: black;
+  font-weight: bold;
+}
+.faqsSection button {
+  margin: 0.4rem 0.6rem;
+  width: 56px;
+  height: 56px;
+  font-weight: 600;
+  border-radius: 0px;
+  text-transform: none;
+}
+.faqsSection button:active {
+  color: #6ac5f3;
+}
+.faqsSection h3, .faqsSection button {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: white;
+  letter-spacing: 0.08rem;
+  padding: 1rem 1.2rem 1.4rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(25px);
+  transition: all 0s ease-in-out 0s;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.faqsSection h3:active, .faqsSection button:active {
+  border-width: 2px 2px 0px 2px;
+  color: black;
+}
+.faqsSection h3:hover, .faqsSection button:hover, .faqsSection h3:focus, .faqsSection button:focus {
+  transition: all 0s ease-in-out 0s;
+  color: #fc9d8f;
+  outline: rgba(0, 0, 0, 0) solid 0px;
+}
+.faq {
+  margin: 0.4rem auto;
+}
+#faqs {
+  margin: 1.2rem auto 0;
+  width: 82%;
+  max-width: 1040px;
+}
+.faqDetails {
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-width: 0px 2px 2px 2px;
+  display: none;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .faqsSection {
+    height: 620px;
+  }
+  .faqsSection button {
+    margin-right: 0.4rem;
+    margin-left: 0.4rem;
+    width: 52px;
+    height: 52px;
+  }
+  .faqsSection h3, .faqsSection button {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem 1.2rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  .faqsSection {
+    height: 680px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  .faqsSection {
+    height: 840px;
+  }
+  .faqsSection button {
+    font-size: 1.9rem;
+    margin: 0.4rem 0.6rem;
+  }
+  .faqsSection h3 {
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+    padding: 1.2rem 2rem 1.4rem;
+  }
+  .faqsSection p {
+    font-size: 1.95rem;
+    line-height: 2.9rem;
+    padding: 2rem 2rem 2.2rem;
+  }
+  #faqs {
+    margin-top: 2rem;
+    width: 75%;
+    max-width: 1400px;
+  }
+  .faq {
+    margin: 0.6rem auto;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: SUBSCRIBE ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Mixins */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+.subscribeSection {
+  height: 800px;
+}
+.subscribeSection .lead p {
+  margin-bottom: 0rem;
+}
+#subscribe #mc_embed_signup {
+  margin: 0 auto;
+  padding-top: 1.2rem;
+  width: 82%;
+  max-width: 600px;
+}
+#subscribe #mc_embed_signup .btn {
+  margin: 2rem auto 2rem;
+  width: 260px;
+  background-color: black;
+  border-radius: 0px;
+  border-width: 2px;
+  border-color: black;
+}
+#subscribe #mc_embed_signup .btn:hover, #subscribe #mc_embed_signup .btn:focus {
+  color: #dd85e4;
+  border-color: #dd85e4;
+  border-width: 2px;
+}
+#subscribe #mc_embed_signup label {
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: left;
+  color: white;
+  letter-spacing: 0.1rem;
+  margin: 1.2rem auto;
+  text-shadow: 3px 2.5px 2.5px rgba(0, 0, 0, 0.4);
+}
+#subscribe #mc_embed_signup .indicates-required {
+  display: none;
+}
+#subscribe #mc_embed_signup .mc-field-group {
+  text-align: left;
+  margin-top: 1.6rem;
+}
+#subscribe #mc_embed_signup .mc-field-group input {
+  margin: 6px auto 12px;
+  padding: 8px;
+  width: 100%;
+  backdrop-filter: blur(15px);
+  font-size: 2rem;
+  color: #6ac5f3;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.123);
+  margin-bottom: 0px;
+}
+#subscribe #mc_embed_signup .mc-field-group input:active, #subscribe #mc_embed_signup .mc-field-group input:focus {
+  color: white;
+  outline: none;
+  background-color: black;
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0);
+  border-color: #6ac5f3;
+  border-width: 2px;
+}
+#subscribe #mc_embed_signup div.mce_inline_error {
+  background-color: #6ac5f3;
+  color: black;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  padding-bottom: 0.8rem;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  .subscribeSection {
+    height: 770px;
+  }
+  #subscribe #mc_embed_signup label {
+    font-size: 1.7rem;
+  }
+  #subscribe #mc_embed_signup .mc-field-group input {
+    font-size: 1.7rem;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XXL */
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: FOOTER ****/
+/* #region /
+/* ANCHOR: Vars */
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MOB */
+footer {
+  height: 1070px;
+  background-color: black;
+  overflow: hidden;
+}
+footer ul {
+  list-style: none;
+  padding: 4px 0 20px;
+}
+footer ul li {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 3.8rem;
+  letter-spacing: 0.07rem;
+}
+footer ul li a {
+  color: white;
+}
+footer ul li a:hover, footer ul li a:active {
+  color: #fc9d8f;
+}
+footer h2 {
+  padding: 4px 0 0 6px;
+  text-align: left;
+  font-family: "Ethnocentric", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: 22px;
+  color: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  display: inline-block;
+}
+footer i {
+  font-size: 28px;
+  top: 3.5px;
+}
+footer h2, footer i {
+  background: linear-gradient(0deg, #8d78ff 14.85%, #6ac5f3 100.8%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#footLogo {
+  display: none;
+}
+#bigFooter {
+  border-width: 2px 0px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #fc9d8f, #8d78ff, #6ac5f3, #80fcb0) 1;
+}
+#footerInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  padding: 28px 28px 32px;
+  text-align: left;
+}
+#footerConnect {
+  padding: 4px 0;
+}
+#footerConnect .icon a i {
+  font-size: 42px;
+  margin-right: 16px;
+  background: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: white;
+}
+#footerConnect .icon a i:hover, #footerConnect .icon a i:active {
+  background: #fc9d8f;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fc9d8f;
+  text-decoration: none;
+}
+#footerBottom {
+  padding: 16px 0 40px;
+  width: 100%;
+  display: block;
+}
+#footerBottom small {
+  font-size: 18px;
+  line-height: 2.6rem;
+  text-align: center;
+  position: relative;
+  right: 6px;
+}
+#footerBottom a {
+  text-decoration: underline;
+  color: white;
+  transition: 0.2s;
+}
+#footerBottom a:hover {
+  color: #fc9d8f;
+}
+#footerBottom #pw {
+  font-size: 16px;
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: TAB */
+@media (min-width: 640px) {
+  footer {
+    height: 650px;
+  }
+  footer h2 {
+    font-size: 18px;
+  }
+  footer ul {
+    padding: 4px 0 12px;
+  }
+  footer ul li {
+    font-size: 17px;
+    line-height: 3.4rem;
+  }
+  footer i {
+    font-size: 26px;
+    top: 4.4px;
+  }
+  #footerInner {
+    padding: 28px 36px 20px;
+    grid-template-columns: 53.5% 1fr;
+  }
+  #footerConnect .icon a i {
+    font-size: 38px;
+    margin-right: 16px;
+  }
+  #footerBottom small {
+    font-size: 18px;
+  }
+  #footerBottom #pw {
+    font-size: 16px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: SM */
+@media (min-width: 768px) {
+  footer {
+    height: 488px;
+  }
+  footer h2 {
+    font-size: 16px;
+  }
+  footer ul li {
+    font-size: 16px;
+    line-height: 3rem;
+  }
+  footer i {
+    font-size: 24px;
+    top: 4.5px;
+  }
+  #footerInner {
+    grid-template-columns: auto auto auto;
+    width: 80%;
+    max-width: 1020px;
+    padding: 24px 0 28px;
+  }
+  #footerConnect .icon a i {
+    font-size: 32px;
+    margin-right: 12px;
+  }
+  #footerBottom {
+    padding: 12px 0 24px;
+  }
+  #footerBottom small {
+    font-size: 16px;
+    line-height: 2.4rem;
+  }
+  #footerBottom #pw {
+    font-size: 14px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: MD */
+@media (min-width: 1024px) {
+  footer {
+    height: 418px;
+  }
+  #footerInner {
+    grid-template-columns: auto auto auto auto;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: LG */
+@media (min-width: 1360px) {
+  #orgDesc {
+    display: inline-block;
+  }
+  #orgDesc a img {
+    width: 140px;
+    padding-bottom: 4px;
+  }
+}
+/* #endregion */
+/* #region /
+/* ANCHOR: Styles: XL */
+@media (min-width: 1600px) {
+  footer {
+    height: 472px;
+  }
+  footer h2 {
+    font-size: 22px;
+  }
+  footer ul li {
+    font-size: 18px;
+    line-height: 3.6rem;
+  }
+  footer i {
+    font-size: 28px;
+    top: 4.5px;
+  }
+  #footerInner {
+    width: 73%;
+    max-width: 1360px;
+    padding: 24px 0 20px;
+  }
+  #footerConnect .icon a i {
+    font-size: 36px;
+    margin-right: 14px;
+  }
+  #footerBottom {
+    padding: 12px 0 32px;
+  }
+  #footerBottom small {
+    font-size: 17px;
+    line-height: 2.4rem;
+  }
+  #footerBottom #pw {
+    font-size: 15px;
+  }
+}
+/* #endregion */
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: ACCESSIBILITY ****/
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: PRINT ****/
+@media print {
+  /* Hide mainNav */
+  * {
+    color: #000;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+  }
+  .navLogo {
+    width: 100px;
+  }
+  main {
+    padding-top: 110px;
+  }
+  html {
+    background-color: #fff;
+    font-size: 85%;
+  }
+  #ddmenu, #ddmenu ul, .donateBanner, .ddBtnWrapper, #headerWrapper, #bigFooter, #socialBtns {
+    display: none;
+  }
+}
+/* #endregion 
+/* !SECTION */
+/* #region /
+/**** SECTION: PLAYGROUND ****/
+/* #endregion 
+/* !SECTION */
+.homeHero .heroText img {
+  height: auto;
+}
+.heroButton {
+  margin-top: 15px;
+  width: auto;
+  display: inline-block;
+}
+.heroButton a {
+  display: block;
+}
+.heroButton a button {
+  padding: 1.8rem 3.2rem;
+  color: #000;
+  transition: all 0.7s ease-in-out 0s;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #fc9d8f 0%, #dd85e4 20%, #8d78ff 40%, #577bfc 60%, #6ac5f3 80%, #80fcb0 100%);
+  border: rgba(0, 0, 0, 0) solid 0px;
+}
+div#faqs .faq div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.pagination-btn.active button {
+  background-color: #6ac5f3;
+  color: #000;
+}
+div#faqs .faq div.open {
+  max-height: 1000px;
+}
+div#faqs .faq div {
+  display: block;
+}
+div#faqs .faq div.open {
+  height: auto;
+}
+.catBtns a button.active {
+  background-color: #fc9d8f;
+  color: #000;
+}
+.catBtns .btn.active .title {
+  background: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
+.vr-loader {
+  border: 7px solid #e2e8f0;
+  border-radius: 50%;
+  border-top: 7px solid #fc9d8f;
+  width: 50px;
+  height: 50px;
+  display: none;
+  -webkit-animation: vr-spin 2s linear infinite;
+  /* Safari */
+  animation: vr-spin 2s linear infinite;
+  z-index: 2;
+  position: relative;
+}
+.vr-loader-wrap.active .vr-loader {
+  display: inline-block;
+}
+.vr-loader-wrap.active::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  display: block;
+  z-index: 9;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.vr-loader-wrap {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+}
+.vr-loader-wrap.active {
+  display: flex;
+}
+.hero-down-scroll button.btn {
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  color: #000;
+  transition: all 0.7s ease-in-out 0s;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #fc9d8f 0%, #dd85e4 20%, #8d78ff 40%, #577bfc 60%, #6ac5f3 80%, #80fcb0 100%);
+  border: rgba(0, 0, 0, 0) solid 0px;
+  height: 60px;
+}
+.hero-down-scroll button.btn i {
+  font-size: 24px;
+}
+.hero-down-scroll {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body.open-menu {
+  overflow: hidden;
+}
+/* Loader */
+.trailer-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.trailer-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.trailer-modal .modal-body {
+  overflow-x: hidden;
+}
+/* Safari */
+@-webkit-keyframes vr-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes vr-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animatetop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
