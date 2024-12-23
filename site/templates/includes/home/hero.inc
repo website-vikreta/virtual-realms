@@ -17,18 +17,18 @@
 
 <div class="hero homeHero <?=$class?>">
 	<picture>
-		<source type="image/webp" srcset="<?=$heroBg->webp->url?>" />
-		<source type="image/jpg" srcset="<?=$heroBg->url?>" />
-		<img src="<?= $heroBg->url ?>" alt="<?=$heroBgAlt?>" />
+		<source type="image/webp" data-srcset="<?=$heroBg->webp->url?>" />
+		<source type="image/jpg" data-srcset="<?=$heroBg->url?>" />
+		<img data-src="<?= $heroBg->url ?>" alt="<?=$heroBgAlt?>" />
 	</picture>
 
 	<div id="heroGradient"></div>
 	<div class="heroText">
 		<div class="heroText-inner mob">
-			<img src="<?=$heroTextPath?>-text-m.svg" alt='<?=$heroTextAlt?>'/>
+			<img data-src="<?=$heroTextPath?>-text-m.svg" alt='<?=$heroTextAlt?>'/>
 		</div>
 		<div class="heroText-inner dt">
-			<img src="<?=$heroTextPath?>-text.svg" alt='<?=$heroTextAlt?>' />
+			<img data-src="<?=$heroTextPath?>-text.svg" alt='<?=$heroTextAlt?>' />
 		</div>
 		<?php if ( $page->home_hero_cta_text != NULL ): ?>
 			<div class="heroButton">

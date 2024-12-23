@@ -169,7 +169,7 @@ if( isset($section->game_slider_enabled) && $section->game_slider_enabled == 1 )
 
 			<div class="cardCover">
 				<picture class="cardThumb">
-					<source type="image/webp" srcset="<?= $gameCover->webp->url ?>" />
+					<source type="image/webp" data-srcset="<?= $gameCover->webp->url ?>" />
 					<img loading="lazy" data-type="jpg" data-src="<?= $gameCover->url ?>" alt=" <?= $altName ?> game cover."/>
 				</picture>
 				<?= $coverTag ?>
